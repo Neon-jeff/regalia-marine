@@ -10,7 +10,7 @@ type CardProps = {
 const HomeServicesCard = ({image,title,description}:CardProps) => {
   return (
     <div className=''>
-      <Image src={image}/>
+    
 
 
     </div>
