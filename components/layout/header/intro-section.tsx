@@ -1,6 +1,5 @@
 import Image from "next/image";
 import React from "react";
-import newhero from "@/public/images/newhero.webp";
 import { Button } from "@/components/ui/button";
 
 

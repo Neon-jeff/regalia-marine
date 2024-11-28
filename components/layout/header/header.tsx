@@ -1,7 +1,6 @@
 import Image from "next/image";
 import React from "react";
 import herobg from "@/public/images/newhero.webp";
-import { Button } from "@/components/ui/button";
 const Header = () => {
   return (
     <div className="h-screen  relative">
