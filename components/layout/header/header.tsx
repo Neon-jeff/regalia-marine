@@ -46,7 +46,7 @@ const Header = () => {
         placeholder="blur"
       /> */}
       <div className="z-[5] h-full  bg-gray-50 flex flex-col justify-center items-center text-center font-light pt-28 pb-20 max-sm:pt-48 text-white px-20 max-md:px-5 w-full ">
-        <motion.h1 whileInView={{opacity:1}} initial={{opacity:0}} transition={{duration:2}} className="text-5xl xl:text-7xl 2xl:text-8xl  text-ultramarine-950  max-md:leading-tight leading-10  ">
+        <motion.h1 whileInView={{opacity:1}} initial={{opacity:0}} transition={{duration:2}} className="text-5xl xl:text-7xl 2xl:text-8xl  text-ultramarine-800  max-md:leading-tight leading-10  ">
           Innovating the Future of <br /> Marine{" "}
           <span className=""> Engineering</span>
         </motion.h1>

@@ -97,7 +97,7 @@ const IntroSection = () => {
 
       {/* about */}
       <motion.div initial={{y:400,opacity:0}} whileInView={{y:0,opacity:1}} transition={{duration:.5,type:'tween',ease:'easeIn',delay:0}} viewport={{once:true}} className="flex justify-between max-md:flex-col max-sm:gap-5 divide-x max-sm:divide-x-0 divide-gray-400">
-        <h1 className="text-2xl font-medium text-ultramarine-900">Who We Are</h1>
+        <h1 className="text-2xl font-medium text-ultramarine-800">Who We Are</h1>
         <p className="md:w-4/6 pl-10 max-sm:pl-0 text-gray-700">{
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, cumque sunt quia nam qui cupiditate sapiente alias animi quos, praesentium doloremque dicta assumenda adipisci dignissimos atque corporis sit eligendi! Voluptatum enim nesciunt, officia eveniet animi nobis nam veritatis. Fugiat, unde aliquam perspiciatis ratione aut nostrum pariatur facere? Voluptatibus sit ex a voluptatem quis eos possimus perferendis consequuntur vitae rem? Sit quia accusamus laborum impedit et, recusandae excepturi in atque explicabo. Vero dolores illum culpa, architecto est harum minima blanditiis laboriosam, tenetur nulla aperiam cupiditate. Nobis animi dolorum facere ea porro iure eius? Possimus deleniti ut non. Doloremque odio maiores facilis.'
         }</p>
@@ -106,7 +106,7 @@ const IntroSection = () => {
       {/* services layout */}
       <div className="space-y-4 flex flex-col gap-5">
         <div className="space-y-4 ">
-          <h1 className="text-2xl max-sm:text-2xl text-ultramarine-900 font-medium">
+          <h1 className="text-2xl max-sm:text-2xl text-ultramarine-800 font-medium">
             What We Do
           </h1>
         
