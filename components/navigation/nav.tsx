@@ -55,11 +55,11 @@ const Nav = () => {
 
   return (
     <motion.div
-      className="flex justify-center max-md:justify-between fixed py-10 max-sm:py-5 px-10 max-sm:px-5   text-sm text-black backdrop-filter backdrop-blur-sm bg-opacity-10 font-light w-full  rounded-sm left-1/2 -translate-x-1/2 z-10"
-      animate={{
-        backgroundColor: pastHeight ? "rgba(19,19,41,0.7)" : "transparent",
-        color: pastHeight ? "white" : "black",
-      }}
+      className="flex justify-center max-md:justify-between absolute py-6 max-sm:py-5 px-10 max-sm:px-5   text-sm text-black bg-white  font-light w-full  rounded-sm left-1/2 -translate-x-1/2 z-10"
+      // animate={{
+      //   backgroundColor: pastHeight ? "rgba(19,19,41,0.7)" : "transparent",
+      //   color: pastHeight ? "white" : "black",
+      // }}
       transition={{ duration: 500, ease: "easeIn", type: "spring" }}
     >
       <Link href="/" className="absolute left-20 max-md:static">
@@ -67,7 +67,18 @@ const Nav = () => {
         <p>R M I</p>
       </Link>
       {/* main nav items */}
-      <ul className="flex gap-10 max-sm:hidden"></ul>
+      <ul className="flex gap-10 max-sm:hidden">
+      {nav_items.map((item, index) => (
+              <li
+                key={index}
+                className="text-sm text-black"
+              >
+                <Link href={item.route}>
+                  <span className="">{item.name}</span>
+                </Link>
+              </li>
+            ))}
+      </ul>
       <ul>
         {/* <Button>
             Join Waitlist

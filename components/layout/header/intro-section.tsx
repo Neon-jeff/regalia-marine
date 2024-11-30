@@ -1,5 +1,8 @@
+'use client'
+
 import Image from "next/image";
 import React from "react";
+import { motion } from "motion/react";
 
 const IntroSection = () => {
   const services = [
@@ -48,53 +51,58 @@ const IntroSection = () => {
   return (
     <div className="bg-gray-50 p-20 space-y-28 max-md:px-10 max-sm:px-5 mt-20 max-sm:mt-0">
       <div className="  flex max-md:flex-col items-start max-sm:space-y-5 justify-between z-[10] mx-auto text-neutral-800  ">
-        <h1 className="text-3xl max-sm:text-3xl font-medium">
+        <motion.h1 initial={{x:-100}} whileInView={{x:0}} className="text-3xl max-sm:text-3xl font-medium">
           Accelerating Growth In <br className="max-sm:hidden" /> Marine Design
-        </h1>
+        </motion.h1>
         <div className="space-y-3 w-1/2 max-md:w-full ">
-          <p className=" ">
+          <motion.p className=" " initial={{opacity:0.1}}transition={{delay:1,duration:2}} whileInView={{opacity:1}}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, in
             officiis voluptate ex aspernatur illum voluptates molestiae tenetur
-          </p>
+          </motion.p>
           {/* <Button>Learn More</Button> */}
         </div>
       </div>
-      <div className="flex h-[80vh] max-md:space-y-8 max-sm:items-start max-sm:h-full space-x-10 max-md:space-x-0 max-md:flex-col">
+      <motion.div initial={{x:-100}} whileInView={{x:0}} className="flex h-[60vh] max-md:space-y-8 max-sm:items-start max-sm:h-full space-x-10 max-md:space-x-0 max-md:flex-col">
         <Image
+          
           src={
             "https://images.pexels.com/photos/296242/pexels-photo-296242.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
           }
           alt="Regalia Image Section"
-          className="object-cover rounded w-2/3 max-md:w-full"
+          className="object-cover rounded w-1/2 max-md:w-full"
           width={500}
           height={500}
         />
-        <p className=" text-start self-start">
+        <motion.p initial={{opacity:0.1}}transition={{delay:.5,duration:2}} whileInView={{opacity:1}} className=" text-start self-start">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa magnam
           eligendi placeat libero explicabo accusantium enim accusamus, debitis
-        </p>
-      </div>
+        </motion.p>
+      </motion.div>
 
-      <div className="flex flex-row-reverse h-[80vh] max-md:space-y-8 max-sm:items-start max-sm:h-full  max-md:space-x-0  gap-x-10 max-md:flex-col">
+      <motion.div initial={{x:-100}} whileInView={{x:0}} className="flex flex-row-reverse h-[60vh] max-md:space-y-8 max-sm:items-start max-sm:h-full  max-md:space-x-0  gap-x-10 max-md:flex-col">
         <Image
           src={
             "https://images.pexels.com/photos/8439084/pexels-photo-8439084.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
           }
           alt="Regalia Image Section"
-          className="object-cover rounded w-2/3 max-md:w-full"
-          width={1500}
-          height={1500}
+          className="object-cover rounded w-1/2 max-md:w-full"
+          width={500}
+          height={500}
         />
-        <p className=" text-start self-start ">
+        <motion.p className=" text-start self-start " initial={{opacity:0.1}}transition={{delay:.5,duration:2}} whileInView={{opacity:1}}>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa magnam
           eligendi placeat libero explicabo accusantium enim accusamus, debitis
-        </p>
-      </div>
+        </motion.p>
+      </motion.div>
 
       {/* about */}
       <div className="flex justify-between max-md:flex-col max-sm:gap-5 divide-x max-sm:divide-x-0 divide-gray-400">
         <h1 className="text-2xl font-medium">Who We Are</h1>
-        <p className="md:w-4/6 pl-10 max-sm:pl-0 text-gray-900">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, cumque sunt quia nam qui cupiditate sapiente alias animi quos, praesentium doloremque dicta assumenda adipisci dignissimos atque corporis sit eligendi! Voluptatum enim nesciunt, officia eveniet animi nobis nam veritatis. Fugiat, unde aliquam perspiciatis ratione aut nostrum pariatur facere? Voluptatibus sit ex a voluptatem quis eos possimus perferendis consequuntur vitae rem? Sit quia accusamus laborum impedit et, recusandae excepturi in atque explicabo. Vero dolores illum culpa, architecto est harum minima blanditiis laboriosam, tenetur nulla aperiam cupiditate. Nobis animi dolorum facere ea porro iure eius? Possimus deleniti ut non. Doloremque odio maiores facilis.</p>
+        <p className="md:w-4/6 pl-10 max-sm:pl-0 text-gray-900">{
+          'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, cumque sunt quia nam qui cupiditate sapiente alias animi quos, praesentium doloremque dicta assumenda adipisci dignissimos atque corporis sit eligendi! Voluptatum enim nesciunt, officia eveniet animi nobis nam veritatis. Fugiat, unde aliquam perspiciatis ratione aut nostrum pariatur facere? Voluptatibus sit ex a voluptatem quis eos possimus perferendis consequuntur vitae rem? Sit quia accusamus laborum impedit et, recusandae excepturi in atque explicabo. Vero dolores illum culpa, architecto est harum minima blanditiis laboriosam, tenetur nulla aperiam cupiditate. Nobis animi dolorum facere ea porro iure eius? Possimus deleniti ut non. Doloremque odio maiores facilis.'.split('').map((item,index)=><motion.span key={index} initial={{opacity:.2}} whileInView={{opacity:1}} transition={{delay:.01*index}} viewport={{once:true}}>
+            {item}
+          </motion.span>)
+        }</p>
       </div>
 
       {/* services layout */}
@@ -107,16 +115,19 @@ const IntroSection = () => {
         </div>
         <div className="grid grid-cols-3 max-md:grid-cols-1 w-5/6 max-sm:w-11/12 self-end">
           {services.map((item, index) => (
-            <div
+            <motion.div
               key={index}
-              className="space-y-2 border-r border-b border-gray-400 p-5 max-md:first:pt-0 max-md:px-0 max-md:border-r-0  "
+              className={`space-y-2 ${((index+1)%3 == 0 && index !=0)?'border-r-0':'border-r'} border-b border-gray-400 p-5 max-md:first:pt-0 max-md:px-0 max-md:border-r-0 `}
+              initial={{opacity:0,scale:.8}}
+              whileInView={{opacity:1,scale:1}}
+              transition={{duration:.05 *index,type:'tween',ease:'easeIn'}}
             >
               <span className="h-12 w-12 text-gray-500 flex items-center justify-center border rounded-full">
                 {index + 1}
               </span>
               <p className="text-lg font-normal text-gray-800">{item.title}</p>
               <p className="text-sm text-black">{item.description}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

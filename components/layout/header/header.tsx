@@ -46,14 +46,14 @@ const Header = () => {
         placeholder="blur"
       /> */}
       <div className="z-[5] h-full  bg-gray-50 flex flex-col justify-center items-center text-center font-light pt-28 pb-20 max-sm:pt-48 text-white px-20 max-md:px-5 w-full ">
-        <h1 className="text-5xl xl:text-7xl 2xl:text-8xl  text-ultramarine-950  max-md:leading-tight leading-10  ">
+        <motion.h1 whileInView={{opacity:1}} initial={{opacity:0}} transition={{duration:2}} className="text-5xl xl:text-7xl 2xl:text-8xl  text-ultramarine-950  max-md:leading-tight leading-10  ">
           Innovating the Future of <br /> Marine{" "}
           <span className=""> Engineering</span>
-        </h1>
-        <p className="text-base mt-8 text-gray-700  w-1/2   max-md:w-4/5 max-sm:w-full">
+        </motion.h1>
+        <motion.p whileInView={{opacity:1,y:0}} initial={{opacity:0,y:50}} transition={{duration:1,y:{duration:.5}}}  className="text-base mt-8 text-gray-700  w-1/2   max-md:w-4/5 max-sm:w-full">
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam ut
           provident, repellat quasi fugiat eum optio corrupti facere suscipit
-        </p>
+        </motion.p>
 
         <Button className="w-1/5 mt-14 max-sm:w-full" variant={"gradient"}>
           Join Now
@@ -61,7 +61,7 @@ const Header = () => {
       </div>
 
       <div
-        className="h-[60vh] max-sm:h-40[vh] flex  space-y-10  max-md:w-5/6  w-3/5  mx-auto rounded-xl relative "
+        className="h-[70vh] max-sm:h-40[vh] flex  space-y-10  max-md:w-5/6  w-3/5  mx-auto rounded-xl relative "
         ref={containerRef}
       >
         {scrollItems.map((item, index) => {
@@ -75,7 +75,7 @@ const Header = () => {
               // transition={{ duration: 3 }}
               // viewport={{ root: containerRef }}
               key={index}
-              className={`absolute top-20 max-sm:top-0  w-full f items-center gap-10 max-md:gap-5 rounded-xl flex max-sm:flex-col-reverse bg-white  h-3/4 max-sm:h-fit max-sm:p-5`}
+              className={`absolute  max-sm:top-0  w-full f items-center gap-10 max-md:gap-5 rounded-xl flex max-sm:flex-col-reverse bg-white  h-full max-sm:h-fit max-sm:p-5`}
               style={{
                 // y: index == currentIndex ? 0 : 30,
                 x: index == currentIndex ? -10 : 3000,
@@ -96,7 +96,7 @@ const Header = () => {
               <Image
                 src={item.image}
                 alt="regalia carousel image"
-                className="w-1/2 rounded-md h-[40vh] max-sm:h-[30vh] max-sm:w-full  object-cover"
+                className="w-1/2 rounded-md h-full max-sm:h-[30vh] max-sm:w-full  object-cover"
               />
             </motion.div>
           );
