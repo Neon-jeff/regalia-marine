@@ -50,7 +50,7 @@ const Header = () => {
           Innovating the Future of <br /> Marine{" "}
           <span className=""> Engineering</span>
         </motion.h1>
-        <motion.p whileInView={{opacity:1,y:0}} initial={{opacity:0,y:50}} transition={{duration:1,y:{duration:.5}}}  className="text-base mt-8 text-gray-700  w-1/2   max-md:w-4/5 max-sm:w-full">
+        <motion.p whileInView={{opacity:1,y:0}} initial={{opacity:0,y:50}} transition={{duration:1,y:{duration:1},type:'tween'}}  className="text-base mt-8 text-gray-700  w-1/2   max-md:w-4/5 max-sm:w-full">
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam ut
           provident, repellat quasi fugiat eum optio corrupti facere suscipit
         </motion.p>

@@ -51,7 +51,7 @@ const IntroSection = () => {
   return (
     <div className="bg-gray-50 p-20 space-y-28 max-md:px-10 max-sm:px-5 mt-20 max-sm:mt-0">
       <div className="  flex max-md:flex-col items-start max-sm:space-y-5 justify-between z-[10] mx-auto text-neutral-800  ">
-        <motion.h1 initial={{x:-100}} whileInView={{x:0}} className="text-3xl max-sm:text-3xl font-medium">
+        <motion.h1 initial={{x:-300}} whileInView={{x:0}} transition={{duration:1,type:'tween',ease:'easeIn'}} className="text-3xl max-sm:text-3xl font-medium" viewport={{once:true}}>
           Accelerating Growth In <br className="max-sm:hidden" /> Marine Design
         </motion.h1>
         <div className="space-y-3 w-1/2 max-md:w-full ">
@@ -62,7 +62,7 @@ const IntroSection = () => {
           {/* <Button>Learn More</Button> */}
         </div>
       </div>
-      <motion.div initial={{x:-100}} whileInView={{x:0}} className="flex h-[60vh] max-md:space-y-8 max-sm:items-start max-sm:h-full space-x-10 max-md:space-x-0 max-md:flex-col">
+      <motion.div initial={{y:400}} whileInView={{y:0}} transition={{duration:.6,type:'tween',ease:'easeIn',delay:0}} viewport={{once:true}} className="flex h-[60vh] max-md:space-y-8 max-sm:items-start max-sm:h-full space-x-10 max-md:space-x-0 max-md:flex-col">
         <Image
           
           src={
@@ -79,7 +79,7 @@ const IntroSection = () => {
         </motion.p>
       </motion.div>
 
-      <motion.div initial={{x:-100}} whileInView={{x:0}} className="flex flex-row-reverse h-[60vh] max-md:space-y-8 max-sm:items-start max-sm:h-full  max-md:space-x-0  gap-x-10 max-md:flex-col">
+      <motion.div initial={{y:400}} whileInView={{y:0}} transition={{duration:.5,type:'tween',ease:'easeIn',delay:0}} viewport={{once:true}}  className="flex flex-row-reverse h-[60vh] max-md:space-y-8 max-sm:items-start max-sm:h-full  max-md:space-x-0  gap-x-10 max-md:flex-col">
         <Image
           src={
             "https://images.pexels.com/photos/8439084/pexels-photo-8439084.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
@@ -96,14 +96,12 @@ const IntroSection = () => {
       </motion.div>
 
       {/* about */}
-      <div className="flex justify-between max-md:flex-col max-sm:gap-5 divide-x max-sm:divide-x-0 divide-gray-400">
+      <motion.div initial={{y:400,opacity:0}} whileInView={{y:0,opacity:1}} transition={{duration:.5,type:'tween',ease:'easeIn',delay:0}} viewport={{once:true}} className="flex justify-between max-md:flex-col max-sm:gap-5 divide-x max-sm:divide-x-0 divide-gray-400">
         <h1 className="text-2xl font-medium">Who We Are</h1>
         <p className="md:w-4/6 pl-10 max-sm:pl-0 text-gray-900">{
-          'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, cumque sunt quia nam qui cupiditate sapiente alias animi quos, praesentium doloremque dicta assumenda adipisci dignissimos atque corporis sit eligendi! Voluptatum enim nesciunt, officia eveniet animi nobis nam veritatis. Fugiat, unde aliquam perspiciatis ratione aut nostrum pariatur facere? Voluptatibus sit ex a voluptatem quis eos possimus perferendis consequuntur vitae rem? Sit quia accusamus laborum impedit et, recusandae excepturi in atque explicabo. Vero dolores illum culpa, architecto est harum minima blanditiis laboriosam, tenetur nulla aperiam cupiditate. Nobis animi dolorum facere ea porro iure eius? Possimus deleniti ut non. Doloremque odio maiores facilis.'.split('').map((item,index)=><motion.span key={index} initial={{opacity:.2}} whileInView={{opacity:1}} transition={{delay:.01*index}} viewport={{once:true}}>
-            {item}
-          </motion.span>)
+          'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, cumque sunt quia nam qui cupiditate sapiente alias animi quos, praesentium doloremque dicta assumenda adipisci dignissimos atque corporis sit eligendi! Voluptatum enim nesciunt, officia eveniet animi nobis nam veritatis. Fugiat, unde aliquam perspiciatis ratione aut nostrum pariatur facere? Voluptatibus sit ex a voluptatem quis eos possimus perferendis consequuntur vitae rem? Sit quia accusamus laborum impedit et, recusandae excepturi in atque explicabo. Vero dolores illum culpa, architecto est harum minima blanditiis laboriosam, tenetur nulla aperiam cupiditate. Nobis animi dolorum facere ea porro iure eius? Possimus deleniti ut non. Doloremque odio maiores facilis.'
         }</p>
-      </div>
+      </motion.div>
 
       {/* services layout */}
       <div className="space-y-4 flex flex-col gap-5">
@@ -120,7 +118,8 @@ const IntroSection = () => {
               className={`space-y-2 ${((index+1)%3 == 0 && index !=0)?'border-r-0':'border-r'} border-b border-gray-400 p-5 max-md:first:pt-0 max-md:px-0 max-md:border-r-0 `}
               initial={{opacity:0,scale:.8}}
               whileInView={{opacity:1,scale:1}}
-              transition={{duration:.05 *index,type:'tween',ease:'easeIn'}}
+              transition={{duration:.1 *index,type:'tween',ease:'easeIn'}}
+              viewport={{once:true}}
             >
               <span className="h-12 w-12 text-gray-500 flex items-center justify-center border rounded-full">
                 {index + 1}
