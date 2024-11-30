@@ -13,12 +13,12 @@ const Student = () => {
     "Introduction to Marine Robotics",
   ];
   return (
-    <div className="min-h-screen flex bg-ultramarine-900 font-light md:space-x-10  max-md:flex-col w-full text-sm text-white pl-20 max-md:p-2 max-md:pb-20 max-md:space-y-10">
+    <div className="min-h-screen flex bg-black font-light md:space-x-10  max-md:flex-col w-full text-sm text-white pl-20 max-md:p-5 max-md:pb-20 max-md:space-y-10">
       <div className="w-1/2 max-md:w-full pt-20 xl:pb-20">
-        <span className="text-xs mb-3 block text-gray-300">
+        <span className="text-sm mb-3 block text-gray-300">
           Educating the future
         </span>
-        <h1 className="text-5xl max-md:text-3xl">
+        <h1 className="text-4xl max-md:text-3xl">
           Engineering Centered <br className="max-sm:hidden" /> Training for
           Students
         </h1>
@@ -28,8 +28,8 @@ const Student = () => {
           illum quaerat neque.
         </p>
 
-        <div className="flex justify-between mt-10 divide-x max-md:flex-col max-md:divide-x-0 max-md:space-y-4">
-          <p className="text-lg">Our training modules includes:</p>
+        <div className="flex justify-between mt-10 divide-x divide-gray-500 max-md:flex-col max-md:divide-x-0 max-md:space-y-4">
+          <p className="text-base">Our training modules includes:</p>
           <div className="grid grid-cols-2 gap-5 pl-10 max-md:pl-0 ">
             {modules.map((item, index) => (
               <div key={index} className="text-gray-300 space-y-2">
@@ -42,7 +42,7 @@ const Student = () => {
           </div>
         </div>
 
-        <Button className="bg-white text-black w-full mt-16 hover:bg-black hover:text-white transition duration-100 ease-in ">
+        <Button className="bg-white text-black w-full mt-16 hover:bg-ultramarine-800 hover:text-white transition duration-100 ease-in ">
           Register for trainings
         </Button>
       </div>
