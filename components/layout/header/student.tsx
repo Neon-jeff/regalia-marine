@@ -13,12 +13,12 @@ const Student = () => {
     "Introduction to Marine Robotics",
   ];
   return (
-    <div className="min-h-screen flex bg-black font-light md:space-x-10  max-md:flex-col w-full text-sm text-white pl-20 max-md:p-5 max-md:pb-20 max-md:space-y-10">
+    <div className="min-h-screen flex bg-ultramarine-950 font-light md:space-x-10  max-md:flex-col w-full text-sm text-white pl-20 max-md:p-5 max-md:pb-20 max-md:space-y-10">
       <div className="w-1/2 max-md:w-full pt-20 xl:pb-20">
         <span className="text-sm mb-3 block text-gray-300">
           Educating the future
         </span>
-        <h1 className="text-4xl max-md:text-3xl">
+        <h1 className="text-4xl max-md:text-3xl text-white">
           Engineering Centered <br className="max-sm:hidden" /> Training for
           Students
         </h1>
