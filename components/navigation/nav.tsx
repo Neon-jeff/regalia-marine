@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import React, { useState } from "react";
-import { CloseCircle, HambergerMenu } from "iconsax-react";
+import {  HambergerMenu } from "iconsax-react";
 import {
   motion,
   useScroll,
