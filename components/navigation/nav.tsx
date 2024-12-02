@@ -5,8 +5,6 @@ import React, { useState } from "react";
 import {  HambergerMenu } from "iconsax-react";
 import {
   motion,
-  useScroll,
-  useMotionValueEvent,
   AnimatePresence,
 } from "motion/react";
 import { X } from "lucide-react";
@@ -24,12 +22,8 @@ const Nav = () => {
       route: "/",
     },
     {
-      name: "Consultation",
-      route: "/",
-    },
-    {
       name: "Training",
-      route: "/",
+      route: "/training",
     },
     {
       name: "News",
@@ -40,31 +34,24 @@ const Nav = () => {
       route: "/",
     },
   ];
-  const { scrollY } = useScroll();
-
-  const [pastHeight, setPastHeight] = useState(false);
   const [open, setOpen] = useState(false);
 
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    if (latest > window.screen.height - 200) {
-      setPastHeight(true);
-    } else {
-      setPastHeight(false);
-    }
-  });
+  // useMotionValueEvent(scrollY, "change", (latest) => {
+  //   if (latest > window.screen.height - 200) {
+  //     setPastHeight(true);
+  //   } else {
+  //     setPastHeight(false);
+  //   }
+  // });
 
   return (
-    <motion.div
+    <nav
       className="flex justify-center max-md:justify-between absolute py-6 max-sm:py-5 px-10 max-sm:px-5   text-sm text-black bg-white  font-light w-full  rounded-sm left-1/2 -translate-x-1/2 z-10"
-      // animate={{
-      //   backgroundColor: pastHeight ? "rgba(19,19,41,0.7)" : "transparent",
-      //   color: pastHeight ? "white" : "black",
-      // }}
-      transition={{ duration: 500, ease: "easeIn", type: "spring" }}
+ 
     >
       <Link href="/" className="absolute left-20 max-md:static">
         {/* <Image src={logo} alt="regalia marine logo" width={100} height={100}/> */}
-        <p>R M I</p>
+        R M I
       </Link>
       {/* main nav items */}
       <ul className="flex gap-10 max-sm:hidden">
@@ -89,18 +76,16 @@ const Nav = () => {
       <HambergerMenu
         variant="Outline"
         size={30}
-        color={pastHeight ? "white" : "black"}
+          color="black"
         className=" right-5 lg:hidden"
         onClick={() => {
-          console.log("here");
-
           setOpen(true);
         }}
       />
       <AnimatePresence>
         {open && (
           <motion.ul
-            className="fixed left-0 md:hidden right-0 top-0 bottom-0 text-white h-screen  bg-black  space-y-8 font-light p-10"
+            className="fixed left-0 lg:hidden right-0 top-0 bottom-0 text-white h-screen  bg-black  space-y-8 font-light p-10 z-[5]"
             key="mobile-nav"
             initial={{ y: -1000 }}
             animate={{
@@ -130,15 +115,15 @@ const Nav = () => {
                   transition: { delay: 0.1 * (index + 1) },
                 }}
               >
-                <Link href={item.route}>
-                  <span className="">{item.name}</span>
+                <Link href={item.route} onClick={()=>{setOpen(false)}}>
+                  {item.name}
                 </Link>
               </motion.li>
             ))}
           </motion.ul>
         )}
       </AnimatePresence>
-    </motion.div>
+    </nav>
   );
 };
 
