@@ -26,11 +26,11 @@ const Nav = () => {
       route: "/training",
     },
     {
-      name: "News",
+      name: "Insights",
       route: "/",
     },
     {
-      name: "Contact Us",
+      name: "About Us",
       route: "/",
     },
   ];

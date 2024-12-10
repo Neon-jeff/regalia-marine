@@ -1,8 +1,12 @@
+'use client'
+
 import { Button } from "@/components/ui/button";
 import React from "react";
 import Image from "next/image";
+import { useRouter } from 'next/navigation'
 
 const Student = () => {
+  const router = useRouter()
   const modules = [
     "Ship Design",
     "Sustainable Propulsion Systems",
@@ -42,7 +46,7 @@ const Student = () => {
           </div>
         </div>
 
-        <Button className="bg-white text-black w-full mt-16 hover:bg-ultramarine-800 hover:text-white transition duration-100 ease-in ">
+        <Button onClick={()=>{router.push('/training')}} className="bg-white text-black w-full mt-16 hover:bg-ultramarine-800 hover:text-white transition duration-100 ease-in ">
           Register for trainings
         </Button>
       </div>

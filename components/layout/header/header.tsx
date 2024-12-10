@@ -1,21 +1,22 @@
 "use client";
 
-import React, {  useRef, useState } from "react";
-import { Button } from "@/components/ui/button";
-import {
-  motion,
-} from "motion/react";
-import design from "@/public/images/design.jpg";
-import educate from "@/public/images/educate.jpg";
-import ship from "@/public/images/ship.jpg";
+import React, {  useRef } from "react";
+import carouselone from '@/public/images/carousel-one.jpg'
+import carouseltwo from '@/public/images/carousel-two.jpg'
+import carouselthree from '@/public/images/carousel-three.jpg'
 import Image from "next/image";
 import {gsap} from 'gsap'
 import {useGSAP} from '@gsap/react'
 import scrollTrigger from 'gsap/ScrollTrigger'
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
 
 const Header = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-const containerRef = useRef(null)
 const parallaxRef=useRef(null)
 gsap.registerPlugin(scrollTrigger)
 
@@ -23,20 +24,22 @@ gsap.registerPlugin(scrollTrigger)
 
   const scrollItems = [
     {
-      title: "Marine Construction",
-      image: ship,
-      description: "there is a description",
+      title: "Remote Operated Vehicle",
+      image: carouselthree,
+      description: "Explore underwater depths effortlessly with our advanced remote-operated vehicle technology",
     },
     {
-      title: "Educate",
-      image: educate,
-      description: "there is a description",
+      title: "Ship Design",
+      image: carouseltwo,
+      description: "Innovative ship design solutions combining efficiency, functionality, and cutting-edge engineering.",
     },
     {
-      title: "Engineering Design",
-      image: design,
-      description: "there is a description",
+      title: "Ship Structural Analysis",
+      image: carouselone,
+      description: "Comprehensive ship structural analysis ensuring safety, durability, and optimal performance at sea.",
     },
+
+
   ];
 
   useGSAP(()=>{
@@ -74,13 +77,32 @@ gsap.registerPlugin(scrollTrigger)
 
   return (
     <div className="min-h-screen  relative">
+
+      <Carousel>
+        <CarouselContent>
+        {
+        scrollItems.map((item,index)=><CarouselItem key={index} className="basis-5/6 max-md:basis-11/12 pl-0">
+          <div className="relative">
+            <Image src={item.image} alt="Carousel Image Regalia Marine" className='h-[100vh] max-sm:h-[90vh] object-cover'/>
+            <div className="absolute bg-black bottom-10 p-10 rounded-md bg-opacity-50 w-full lg:w-1/2 left-10 space-y-2 text-white font-thin max-md:left-0 max-md:bottom-0">
+              <h1 className='text-4xl max-md:text-2xl font-regular'>{item.title}</h1>
+              <p className=''>{item.description}</p>
+            </div>
+          </div>
+        </CarouselItem>)
+      }
+        </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
+
       {/* <Image
         src={herobg}
         alt="Regalia marine hero background image"
         className=" h-full w-full object-cover bg-ultramarine-900"
         placeholder="blur"
       /> */}
-      <div className="z-[5] h-full  bg-gray-50 flex flex-col justify-center items-center text-center font-light pt-36 pb-20 max-sm:pt-36  px-20 max-md:px-5 w-full ">
+      {/* <div className="z-[5] h-full  bg-gray-50 flex flex-col justify-center items-center text-center font-light pt-36 pb-20 max-sm:pt-36  px-20 max-md:px-5 w-full ">
         <h1 className="herotext text-4xl lg:w-1/2 xl:text-6xl 2xl:text-7xl  text-ultramarine-700  max-md:leading-tight leading-10  ">
           Innovating the Future of  Marine{" "}
           <span className=""> Engineering</span>
@@ -93,10 +115,10 @@ gsap.registerPlugin(scrollTrigger)
         <Button className="w-1/5 mt-14 max-sm:w-full" variant={"gradient"}>
           Join Now
         </Button>
-      </div>
+      </div> */}
 
 
-     <div
+     {/* <div
         className=" parallaxContainer  xl:min-h-screen w-3/5   max-md:w-full max-sm:h-fit relative     mx-auto rounded-xl"
         ref={containerRef}
         
@@ -128,7 +150,7 @@ gsap.registerPlugin(scrollTrigger)
             </div>
           );
         })}
-      </div>
+      </div> */}
  
     </div>
   );
