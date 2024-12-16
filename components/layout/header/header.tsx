@@ -76,8 +76,6 @@ gsap.registerPlugin(scrollTrigger)
   })
 
   const [api,setApi] = useState<CarouselApi>()
-  const [index,setIndex]=useState<number>(0)
-  const [count,setCount]=useState<number>(0)
 
   useEffect(()=>{
     if(!api){
