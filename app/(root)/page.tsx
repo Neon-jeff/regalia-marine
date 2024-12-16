@@ -1,4 +1,4 @@
-import { IntroSection, Seminar, Student } from "@/components/layout/header";
+import { IntroSection, Student } from "@/components/layout/header";
 import Header from "@/components/layout/header/header";
 
 
@@ -11,6 +11,6 @@ export default function Home() {
     <Header/>
     <IntroSection/>
     <Student/>
-    <Seminar/>
+    {/* <Seminar/> */}
   </div>;
 }

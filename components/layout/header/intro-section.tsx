@@ -2,13 +2,6 @@
 
 
 import React from "react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
 
 const IntroSection = () => {
@@ -50,7 +43,7 @@ const IntroSection = () => {
       </div> */}
 
       {/* about */}
-      <div className="flex justify-between flex-col max-sm:gap-5 space-y-5 ">
+      <div className="flex items-center text-center justify-between flex-col max-sm:gap-5 space-y-5 ">
         <h1 className="text-4xl max-sm:text-2xl text-blue-500">
           Who We Are
         </h1>
@@ -62,21 +55,19 @@ const IntroSection = () => {
       </div>
 
       {/* services layout */}
-      <div className="space-y-4 flex flex-col gap-5">
+      <div className="space-y-4 flex flex-col w-4/5 mx-auto max-md:w-full items-center text-center gap-5">
         <div className="space-y-4 ">
           <h1 className="text-4xl max-sm:text-2xl text-blue-500 ">
             What we do
           </h1>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, repellat.</p>
-          <Button className="w-fit">Request Quotation</Button>
         </div>
-        <Carousel>
-          <CarouselContent>
+      
+          <div className="grid grid-cols-2 max-md:grid-cols-1  gap-8 ">
             {services.map((item, index) => (
-              <CarouselItem className='basis-1/3 max-sm:basis-11/12 ' key={index}>
                 <div
-                  
-                  className={`space-y-2 bg-white h-full p-5    `}
+                  key={index}
+                  className={`space-y-2  bg-white h-full p-5 rounded-lg text-start hover:scale-105 transition ease-in duration-200   `}
                 >
                   <span className="h-12 w-12 text-ultramarine-500  flex items-center justify-center border border-ultramarine-400 rounded-full">
                     {index + 1}
@@ -84,12 +75,10 @@ const IntroSection = () => {
                   <p className="text-lg font-normal ">{item.title}</p>
                   <p className="text-sm ">{item.description}</p>
                 </div>
-              </CarouselItem>
+           
             ))}
-          </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
-        </Carousel>
+          </div>
+          <Button className="w-fit">Request Quotation</Button>
       </div>
     </div>
   );

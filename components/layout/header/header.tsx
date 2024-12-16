@@ -1,12 +1,13 @@
 "use client";
 
-import React, {  useRef } from "react";
+import React, {  useEffect, useRef, useState } from "react";
 import carouselone from '@/public/images/carousel-one.jpg'
 import carouseltwo from '@/public/images/carousel-two.jpg'
 import carouselthree from '@/public/images/carousel-three.jpg'
 import Image from "next/image";
 import {gsap} from 'gsap'
 import {useGSAP} from '@gsap/react'
+import { type CarouselApi } from "@/components/ui/carousel"
 import scrollTrigger from 'gsap/ScrollTrigger'
 import {
   Carousel,
@@ -74,16 +75,38 @@ gsap.registerPlugin(scrollTrigger)
     })
   })
 
+  const [api,setApi] = useState<CarouselApi>()
+  const [index,setIndex]=useState<number>(0)
+  const [count,setCount]=useState<number>(0)
+
+  useEffect(()=>{
+    if(!api){
+      return
+    }
+    const interval = setInterval(()=>{
+      if(api.canScrollNext()){
+        api.scrollNext()
+        return
+      }
+      api.scrollTo(0)
+    },6000)
+
+    return ()=>{clearInterval(interval)}
+
+    
+
+  },[api])
 
   return (
-    <div className="min-h-screen  relative">
+    <div className="">
 
-      <Carousel>
+      <Carousel setApi={setApi}>
         <CarouselContent>
         {
-        scrollItems.map((item,index)=><CarouselItem key={index} className="basis-5/6 max-md:basis-11/12 pl-0">
+        scrollItems.map((item,index)=>
+        <CarouselItem key={index} className="basis-full pl-0">
           <div className="relative">
-            <Image src={item.image} alt="Carousel Image Regalia Marine" className='h-[100vh] max-sm:h-[90vh] object-cover'/>
+            <Image src={item.image} alt="Carousel Image Regalia Marine" className='h-[90vh] w-screen max-sm:h-[90vh] object-cover'/>
             <div className="absolute bg-black bottom-10 p-10 rounded-md bg-opacity-50 w-full lg:w-1/2 left-10 space-y-2 text-white font-thin max-md:left-0 max-md:bottom-0">
               <h1 className='text-4xl max-md:text-2xl font-regular'>{item.title}</h1>
               <p className=''>{item.description}</p>
