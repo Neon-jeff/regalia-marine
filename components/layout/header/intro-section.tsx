@@ -29,7 +29,7 @@ const IntroSection = () => {
   ];
 
   return (
-    <div className="bg-gray-50 px-20 pb-20 space-y-28 max-md:px-10 max-sm:px-5 mt-20 max-sm:mt-0">
+    <div className="bg-gray-50 px-20 pb-20 space-y-28 max-md:px-10 max-sm:px-5 mt-20 max-sm:mt-10">
       {/* <div className="  flex max-md:flex-col items-start max-sm:space-y-5 justify-between z-[10] mx-auto   ">
         <motion.h1 initial={{x:-300}} whileInView={{x:0}} transition={{duration:1,type:'tween',ease:'easeIn'}} className="text-3xl max-sm:text-3xl font-medium text-ultramarine-700" viewport={{once:true}}>
           Accelerating Growth In <br className="max-sm:hidden" /> Marine Design
