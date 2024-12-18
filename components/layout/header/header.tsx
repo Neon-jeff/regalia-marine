@@ -29,7 +29,7 @@ gsap.registerPlugin(scrollTrigger)
   const scrollItems = [
     {
       title: "Remote Operated Vehicle",
-      image: carouselthree,
+      image: carouselone,
       description: "Explore underwater depths effortlessly with our advanced remote-operated vehicle technology",
     },
     {
@@ -39,7 +39,7 @@ gsap.registerPlugin(scrollTrigger)
     },
     {
       title: "Ship Structural Analysis",
-      image: carouselone,
+      image: carouselthree,
       description: "Comprehensive ship structural analysis ensuring safety, durability, and optimal performance at sea.",
     },
     {
