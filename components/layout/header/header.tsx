@@ -1,9 +1,11 @@
 "use client";
 
 import React, {  useEffect, useRef, useState } from "react";
-import carouselone from '@/public/images/carousel-one.jpg'
-import carouseltwo from '@/public/images/carousel-two.jpg'
-import carouselthree from '@/public/images/carousel-three.jpg'
+import carouselone from '@/public/images/1.jpg'
+import carouseltwo from '@/public/images/2.jpg'
+import carouselthree from '@/public/images/3.jpg'
+import carouselfour from '@/public/images/4.jpg'
+
 import Image from "next/image";
 import {gsap} from 'gsap'
 import {useGSAP} from '@gsap/react'
@@ -16,6 +18,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
+// import { Button } from "@/components/ui/button";
 
 const Header = () => {
 const parallaxRef=useRef(null)
@@ -39,7 +42,11 @@ gsap.registerPlugin(scrollTrigger)
       image: carouselone,
       description: "Comprehensive ship structural analysis ensuring safety, durability, and optimal performance at sea.",
     },
-
+    {
+      title: "Ship Structural Analysis",
+      image: carouselfour,
+      description: "Comprehensive ship structural analysis ensuring safety, durability, and optimal performance at sea.",
+    },
 
   ];
 
@@ -103,11 +110,14 @@ gsap.registerPlugin(scrollTrigger)
         {
         scrollItems.map((item,index)=>
         <CarouselItem key={index} className="basis-full pl-0">
-          <div className="relative">
+          <div className="relative w-screen">
             <Image src={item.image} alt="Carousel Image Regalia Marine" className='h-[90vh] max-md:h-[80vh] w-full  object-cover'/>
-            <div className="absolute bg-black bottom-10 p-10 rounded-md bg-opacity-50 w-full lg:w-1/2 left-10 space-y-2 text-white font-thin max-md:left-0 max-md:bottom-0">
-              <h1 className='text-4xl max-md:text-2xl font-regular'>{item.title}</h1>
+            <div className="absolute bg-black top-0 bottom-0 p-10 right-0 left-0 bg-opacity-0  w-full  space-y-2 flex flex-col justify-center items-center text-white font-thin max-md:left-0 max-md:bottom-0">
+              {/* <div className="lg:w-1/3 space-y-4 text-center">
+              <h1 className='text-4xl font-medium max-md:text-2xl font-regular'>{item.title}</h1>
               <p className=''>{item.description}</p>
+              <Button>Get Started Now</Button>
+              </div> */}
             </div>
           </div>
         </CarouselItem>)
