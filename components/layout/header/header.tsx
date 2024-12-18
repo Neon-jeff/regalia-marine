@@ -110,7 +110,7 @@ gsap.registerPlugin(scrollTrigger)
         {
         scrollItems.map((item,index)=>
         <CarouselItem key={index} className="basis-full pl-0">
-          <div className="relative w-screen">
+          <div className="relative">
             <Image src={item.image} alt="Carousel Image Regalia Marine" className='h-[90vh] max-md:h-[80vh] w-full  object-cover'/>
             <div className="absolute bg-black top-0 bottom-0 p-10 right-0 left-0 bg-opacity-0  w-full  space-y-2 flex flex-col justify-center items-center text-white font-thin max-md:left-0 max-md:bottom-0">
               {/* <div className="lg:w-1/3 space-y-4 text-center">
