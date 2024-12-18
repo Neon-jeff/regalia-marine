@@ -15,8 +15,6 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel"
 // import { Button } from "@/components/ui/button";
 
@@ -28,23 +26,31 @@ gsap.registerPlugin(scrollTrigger)
 
   const scrollItems = [
     {
-      title: "Remote Operated Vehicle",
-      image: carouselone,
+      title: ()=><span>
+        Nigeria's first <br/> africa's best
+      </span>,
+      image: carouselfour,
       description: "Explore underwater depths effortlessly with our advanced remote-operated vehicle technology",
     },
     {
-      title: "Ship Design",
-      image: carouseltwo,
+      title: ()=> <span>
+      Giving life to  <br/> engineering
+    </span>,
+      image: carouselone,
       description: "Innovative ship design solutions combining efficiency, functionality, and cutting-edge engineering.",
     },
     {
-      title: "Ship Structural Analysis",
-      image: carouselthree,
+      title: () => <span>
+      Innovative <br/> marine engineering
+    </span>,
+      image: carouseltwo,
       description: "Comprehensive ship structural analysis ensuring safety, durability, and optimal performance at sea.",
     },
     {
-      title: "Ship Structural Analysis",
-      image: carouselfour,
+      title: () => <span>
+      Exploring greater depths <br/> 
+    </span>,
+      image: carouselthree,
       description: "Comprehensive ship structural analysis ensuring safety, durability, and optimal performance at sea.",
     },
 
@@ -105,26 +111,40 @@ gsap.registerPlugin(scrollTrigger)
   return (
     <div className="">
 
-      <Carousel setApi={setApi}>
+      <Carousel setApi={setApi} className='relative'>
         <CarouselContent>
         {
         scrollItems.map((item,index)=>
         <CarouselItem key={index} className="basis-full pl-0">
           <div className="relative">
             <Image src={item.image} alt="Carousel Image Regalia Marine" className='h-[90vh] max-md:h-[80vh] w-full  object-cover'/>
-            <div className="absolute bg-black top-0 bottom-0 p-10 right-0 left-0 bg-opacity-0  w-full  space-y-2 flex flex-col justify-center items-center text-white font-thin max-md:left-0 max-md:bottom-0">
-              {/* <div className="lg:w-1/3 space-y-4 text-center">
-              <h1 className='text-4xl font-medium max-md:text-2xl font-regular'>{item.title}</h1>
-              <p className=''>{item.description}</p>
-              <Button>Get Started Now</Button>
-              </div> */}
+            <div className="absolute bg-black top-0 bottom-0 p-10 right-0 left-0 bg-opacity-40  w-full  space-y-2 flex flex-col justify-center items-center text-white font-thin max-md:left-0 max-md:bottom-0">
+              <div className=" space-y-4 text-center ">
+              <h1 className='text-7xl  font-medium capitalize  leading-[90px] max-md:text-4xl font-regular'>{item.title()}</h1>
+              {/* <p className=''>{item.description}</p> */}
+              {/* <Button>Get Started Now</Button> */}
+              </div>
             </div>
           </div>
         </CarouselItem>)
       }
         </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
+        {/* <CarouselPrevious />
+        <CarouselNext /> */}
+        <div className='text-white absolute z-[1] right-0 -translate-y-20 px-10 max-md:px-5 flex gap-10'>
+          <button className='w-10 h-10 flex items-center justify-center bg-black bg-opacity-80 rounded-full' onClick={()=>{
+            api?.scrollPrev()
+          }}>
+           <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  className="icon icon-tabler icons-tabler-outline icon-tabler-chevron-left"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M15 6l-6 6l6 6" /></svg>
+          </button>
+          <button onClick={()=>{
+            api?.scrollNext()
+          }}
+          className='w-10 h-10 flex items-center justify-center bg-black bg-opacity-80 rounded-full'
+          >
+            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  className="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+          </button>
+        </div>
       </Carousel>
 
       {/* <Image

@@ -3,6 +3,11 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
+import one from '@/public/images/do1.jpg'
+import two from '@/public/images/do2.jpg'
+import three from '@/public/images/do3.jpg'
+import four from '@/public/images/do4.jpg'
+import Image from "next/image";
 
 const IntroSection = () => {
   const services = [
@@ -10,21 +15,25 @@ const IntroSection = () => {
       title: "Engineering and Design Services",
       description:
         "We provide expert engineering and design solutions in naval architecture, shipbuilding, offshore platforms, and structural analysis, using advanced tools like 3D modeling, virtual prototyping, and digital twin technology.",
+      image:one
     },
     {
       title: "Computational Fluid Dynamics (CFD)",
       description:
         "Our CFD simulations ensure hydrodynamic efficiency, reducing drag and improving vessel performance.",
+      image:two
     },
     {
       title: "Performance Optimization",
       description:
         "We enhance vessel speed, fuel efficiency, and operational reliability through cutting-edge optimization strategies.",
+      image:three
     },
     {
       title: "Advanced Visualization",
       description:
         "Using 3D rendering and virtual reality, we create detailed product visualizations for better design evaluation and collaboration.",
+      image:four
     },
   ];
 
@@ -69,10 +78,11 @@ const IntroSection = () => {
                   key={index}
                   className={`space-y-2  bg-white h-full p-5 rounded-lg text-start hover:scale-105 transition ease-in duration-200   `}
                 >
-                  <span className="h-12 w-12 text-ultramarine-500  flex items-center justify-center border border-ultramarine-400 rounded-full">
+                  {/* <span className="h-12 w-12 text-ultramarine-500  flex items-center justify-center border border-ultramarine-400 rounded-full">
                     {index + 1}
-                  </span>
-                  <p className="text-lg font-normal ">{item.title}</p>
+                  </span> */}
+                  <Image src={item.image} alt='Regalia service image description image' className='rounded-md h-[250px] object-cover w-full'/>
+                  <p className="text-lg font-normal text-black">{item.title}</p>
                   <p className="text-sm ">{item.description}</p>
                 </div>
            
