@@ -32,7 +32,7 @@ const PostDetails = async({params}:{params:Promise<{slug:string}>}) => {
         <ChevronLeft size={20} />
       Back to Insights
       </Link>
-      <h1 className='text-4xl lg:w-3/4 text-black font-semibold'>{post.title}</h1>
+      <h1 className='text-4xl max-md:text-2xl lg:w-3/4 text-black font-semibold'>{post.title}</h1>
       <div className='flex gap-10 py-3'>
       <p className='flex items-center gap-2'>
       <CalendarDays size={20}/>{formatDate(post['_createdAt'])}
@@ -40,7 +40,7 @@ const PostDetails = async({params}:{params:Promise<{slug:string}>}) => {
       <p className='flex items-center gap-2'> <UserRoundPen size={20} /> {post.author}</p>
       </div>
       <p></p>
-      <div className='h-[70vh] bg-gray-300 rounded-lg'>
+      <div className='h-[70vh] max-md:h-[45vh] bg-gray-300 rounded-lg'>
           <Image src={getImageUrl(post.coverimage).url()} alt='Blog Image' width={500} height={500} className='h-full w-full object-cover rounded-lg'/>
       </div>
 
