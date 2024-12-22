@@ -28,7 +28,7 @@ const Nav = () => {
     },
     {
       name: "Insights",
-      route: "/",
+      route: "/insights",
     },
     {
       name: "About Us",
@@ -47,7 +47,7 @@ const Nav = () => {
 
   return (
     <nav
-      className="flex justify-center max-md:justify-between absolute py-6 max-sm:py-5 px-10 max-sm:px-5   text-sm text-white bg-black bg-opacity-45  font-light w-full   left-1/2 -translate-x-1/2 z-10"
+      className="flex justify-center max-md:justify-between absolute py-6 max-sm:py-5 px-10 max-sm:px-5   text-sm  bg-white text-black  font-light w-full   left-1/2 -translate-x-1/2 z-10"
  
     >
       <Link href="/" className="absolute max-md:-translate-y-0 -translate-y-1/2 left-10 max-md:static">
@@ -62,7 +62,7 @@ const Nav = () => {
                 className="text-sm "
               >
                 <Link href={item.route} >
-                  <span className="hover:text-blue-200 transition duration-300 ease-in">{item.name}</span>
+                  <span className="hover:text-blue-400 transition duration-300 ease-in">{item.name}</span>
                 </Link>
               </li>
             ))}
@@ -77,7 +77,7 @@ const Nav = () => {
       <HambergerMenu
         variant="Outline"
         size={30}
-          color="white"
+          color="black"
         className=" right-5 lg:hidden translate-y-2"
         onClick={() => {
           setOpen(true);

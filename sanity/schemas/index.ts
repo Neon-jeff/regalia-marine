@@ -1,0 +1,1 @@
+export {post as postSchema} from './post'
