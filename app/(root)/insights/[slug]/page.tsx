@@ -14,7 +14,7 @@ const fetchPost=async(slug:string):Promise<PostType>=>{
 }
 
 const PostDetails = async({params}:{params:Promise<{slug:string}>}) => {
-    const slug=await params.slug
+    const {slug}=use(params)
     const post = await fetchPost(slug)
     const formatDate=(date:string):string=>{
       return new Date(date).toLocaleDateString("en-US", {
