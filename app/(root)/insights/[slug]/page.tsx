@@ -6,14 +6,16 @@ import Image from 'next/image'
 import {getImageUrl} from '@/utils/sanityImageUrl'
 import Link from 'next/link'
 import {ChevronLeft,UserRoundPen,CalendarDays} from 'lucide-react'
+import {use} from 'react'
 const fetchPost=async(slug:string):Promise<PostType>=>{
   const query=`*[_type == 'posts' && slug.current == '${slug}']{title,description,_createdAt,body,'slug':slug.current,coverimage,author}`
   const data=await client.fetch(query)
   return data[0]
 }
 
-const PostDetails = async({params}:{params:{slug:string}}) => {
-    const post = await fetchPost(params?.slug)
+const PostDetails = async({params}:{params:Promise<{slug:string}>}) => {
+    const slug=await params.slug
+    const post = await fetchPost(slug)
     const formatDate=(date:string):string=>{
       return new Date(date).toLocaleDateString("en-US", {
         year: "numeric",
