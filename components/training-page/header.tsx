@@ -18,11 +18,11 @@ const TrainingHeader = () => {
       </div>
       {/* blur side */}
       <m.div initial={{scale:.5,opacity:0}} animate={{scale:1,opacity:1}} transition={{delay:0,duration:1}} className='relative place-items-center max-sm:w-full max-sm:mt-10 text-start'>
-      <m.div initial={{opacity:0,scale:.8}} whileInView={{opacity:1,scale:1}} tranistion={{delay:0,type:'tween',ease:'easeIn'}}  className='  text-xs w-3/5  space-y-1 bg-white absolute bottom-10 max-sm:bottom-5 -right-20 max-sm:right-0   p-2 rounded-md z-[1]'>
+      <m.div initial={{opacity:0,scale:.8}} whileInView={{opacity:1,scale:1}} transition={{delay:0,type:'tween',ease:'easeIn'}}  className='  text-xs w-3/5  space-y-1 bg-white absolute bottom-10 max-sm:bottom-5 -right-20 max-sm:right-0   p-2 rounded-md z-[1]'>
         <p className='text-sm max-sm:text-xs font-light text-green-500'>Hands on experience</p>
         <p className='max-sm:text-[.6rem] max-sm:font-normal'>Lorem ipsum dolor sit, amet consectetur </p>
       </m.div>
-      <m.div initial={{opacity:0,scale:.8}} whileInView={{opacity:1,scale:1}} tranistion={{type:'tween',duration:6,ease:'easeIn'}} className='  text-xs w-3/5 space-y-1  bg-white absolute top-10 max-sm:top-5 -left-20 max-sm:left-0  p-2 rounded-md z-[1]'>
+      <m.div initial={{opacity:0,scale:.8}} whileInView={{opacity:1,scale:1}} transition={{type:'tween',duration:6,ease:'easeIn'}} className='  text-xs w-3/5 space-y-1  bg-white absolute top-10 max-sm:top-5 -left-20 max-sm:left-0  p-2 rounded-md z-[1]'>
         <p className='text-sm max-sm:text-xs  font-light text-cyan-500'>Remote Access</p>
         <p className='max-sm:text-[.6rem] max-sm:font-normal'>Lorem ipsum dolor sit, amet consectetur </p>
       </m.div>
