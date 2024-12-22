@@ -27,7 +27,7 @@ const Insights = async () => {
       <p className='border mb-6 bg-gray-50 w-fit p-2 max-md:px-5 text-sm rounded-full'>
             All Posts
           </p>
-          <div className='grid grid-cols-3 gap-10 lg:mt-10 mt-5 max-md:grid-cols-2 max-sm:grid-cols-1'>
+          <div className='grid grid-cols-3 gap-10 max-md:gap-y-5 lg:mt-10 mt-5 max-md:grid-cols-2 max-sm:grid-cols-1'>
           {
             posts.map((item,index)=><NewsCard key={index}  {...{...item,coverimage:getImageUrl(item.coverimage).url()}} />)
         }
