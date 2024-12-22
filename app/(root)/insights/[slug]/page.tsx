@@ -40,7 +40,7 @@ const PostDetails = async({params}:{params:Promise<{slug:string}>}) => {
       <p className='flex items-center gap-2'> <UserRoundPen size={20} /> {post.author}</p>
       </div>
       <p></p>
-      <div className='h-[70vh] max-md:h-[45vh] bg-gray-300 rounded-lg'>
+      <div className='h-[70vh] max-md:h-[40vh] bg-gray-300 rounded-lg'>
           <Image src={getImageUrl(post.coverimage).url()} alt='Blog Image' width={500} height={500} className='h-full w-full object-cover rounded-lg'/>
       </div>
 
@@ -48,7 +48,7 @@ const PostDetails = async({params}:{params:Promise<{slug:string}>}) => {
       <p className='text-sm  font-medium'>
         "{post.description}"
       </p>
-      <div className='prose'>
+      <div className='prose mt-10 '>
         <PortableText value={post.body}/>
       </div>
       </div>
