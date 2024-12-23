@@ -15,7 +15,7 @@ type NewsCardProps={
 const NewsCard = ({title,slug,description,_createdAt,coverimage}:NewsCardProps) => {
   return (
     <Link href={`/insights/${slug}`} className='space-y-2 min-h-48 relative  cursor-pointer'>
-      <Image src={coverimage} alt={slug} width={500} height={500} className='w-full h-36 rounded-lg object-cover'/>
+      <Image src={coverimage} alt={slug} width={500} height={500} className='w-full h-36 rounded-lg object-cover max-md:h-56'/>
       <span className='text-sm block text-black font-medium'>{title}</span>
       <span className='text-xs block'>{description.split(' ').slice(0,9).join(" ")}...</span>
       <p className='text-black  font-medium absolute -bottom-8 flex gap-2 items-center'>Read More <ArrowRight size={18}/></p>
