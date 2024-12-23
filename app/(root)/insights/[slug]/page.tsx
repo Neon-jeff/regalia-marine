@@ -6,13 +6,15 @@ import Image from 'next/image'
 import {getImageUrl} from '@/utils/sanityImageUrl'
 import Link from 'next/link'
 import {ChevronLeft,UserRoundPen,CalendarDays} from 'lucide-react'
-import {use} from 'react'
+
 
 const fetchPost=async(slug:string):Promise<PostType>=>{
   const query=`*[_type == 'posts' && slug.current == '${slug}']{title,description,_createdAt,body,'slug':slug.current,coverimage,author}`
   const data=await client.fetch(query)
   return data[0]
 }
+
+
 
 const PostDetails = async({params}:{params:Promise<{slug:string}>}) => {
     const {slug}=await params
@@ -23,6 +25,13 @@ const PostDetails = async({params}:{params:Promise<{slug:string}>}) => {
         month: "long",
         day: "numeric",
       })
+    }
+    const PortableComponents={
+      types:{
+        image:({value}:any)=>(
+          <Image src={getImageUrl(value).url()} alt={'Alt for image here'} height={500} width={500} className='rounded-lg'/>
+        )
+      }
     }
   return (
     <div className='pt-36 bg-white min-h-screen  mx-auto lg:px-20 px-4'>
@@ -48,8 +57,8 @@ const PostDetails = async({params}:{params:Promise<{slug:string}>}) => {
       <p className='text-sm  font-medium'>
         "{post.description}"
       </p>
-      <div className='prose mt-10 '>
-        <PortableText value={post.body}/>
+      <div className='prose mt-10 prose-img:h-[350px] prose-img:w-full prose-img:object-cover prose:img'>
+        <PortableText value={post.body} components={PortableComponents}/>
       </div>
       </div>
     </div>

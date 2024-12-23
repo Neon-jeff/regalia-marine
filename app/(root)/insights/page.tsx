@@ -4,6 +4,8 @@ import React from 'react'
 import { PostType } from '@/utils/types'
 import {getImageUrl} from '@/utils/sanityImageUrl'
 
+export const revalidate = 0;
+
 const fetchPost=async():Promise<Array<PostType>>=>{
   const query="*[_type == 'posts']{title,description,_createdAt,body,'slug':slug.current,coverimage}"
   const data=await client.fetch(query)
