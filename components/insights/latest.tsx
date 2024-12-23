@@ -5,7 +5,7 @@ const LatestNews = () => {
   const youtubeIframe='<iframe width="560" height="315" src="https://www.youtube.com/embed/DRmnkaWQp4o?si=HQA69iZZVRrqgp9L" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
 
   return (
-    <div className=' py-10 lg:px-20        space-y-16   relative'>
+    <div className=' pb-10 py-4 lg:px-20        space-y-16   relative'>
       <div className=' rounded-xl w-full  flex  bg-opacity-60 flex-col gap-5   '>
         <div className='bottom-0  '>
           <p className='border mb-2 w-fit bg-gray-50 p-2 max-md:px-5 text-sm rounded-full'>

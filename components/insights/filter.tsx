@@ -15,15 +15,15 @@ const Filter = () => {
     "CAD",
   ];
   return (
-    <div className="  justify-between w-1/5 max-md:w-full h-fit lg:p-5 lg:bg-gray-50 rounded-lg sticky max-md:static max-md:flex max-md:gap-5   top-10">
+    <div className="  justify-between w-1/5 max-md:w-full h-fit p-5 lg:bg-gray-50 rounded-lg sticky   max-md:flex z-10 max-md:bg-white max-md:gap-5 max-md:px-0 max-md:rounded-none max-md:top-0 top-10">
       <form action="" className='w-full relative'>
         <input
           type="text"
           placeholder="Find an article"
-          className="p-3 max-md:p-3.5 active:outline-none focus:outline-none rounded-lg border border-gray-200 w-full"
+          className="p-3 max-md:p-3.5 active:outline-none focus:outline-none rounded-lg border-[1.2px] border-gray-400 w-full"
         />
         <button className='w-14 absolute -translate-x-10 top-1/2 -translate-y-1/2'>
-        <Search color="#b2aeae"/>
+        <Search color="gray"  strokeWidth={1.2}/>
         </button>
       </form>
       <div className="flex flex-col mt-5 gap-3 max-md:hidden">
