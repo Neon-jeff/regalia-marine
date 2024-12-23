@@ -47,7 +47,7 @@ const Nav = () => {
 
   return (
     <nav
-      className="flex justify-center max-md:justify-between absolute py-6 max-sm:py-5 px-10 max-sm:px-5   text-sm  bg-white text-black  font-light w-full   left-1/2 -translate-x-1/2 z-10"
+      className="flex justify-center max-md:justify-between absolute py-6 max-sm:py-5 px-10 max-sm:px-5   text-sm  bg-white text-black  font-light w-full   left-1/2 -translate-x-1/2 z-40"
  
     >
       <Link href="/" className="absolute max-md:-translate-y-0 -translate-y-1/2 left-10 max-md:static">
@@ -86,7 +86,7 @@ const Nav = () => {
       <AnimatePresence>
         {open && (
           <motion.ul
-            className="fixed left-0 lg:hidden right-0 top-0 bottom-0 text-white h-screen  bg-black  space-y-8 font-light p-10 z-[5]"
+            className="fixed left-0 lg:hidden right-0 top-0 bottom-0 text-white h-screen  bg-black  space-y-8 font-light p-10 "
             key="mobile-nav"
             initial={{ y: -1000 }}
             animate={{
