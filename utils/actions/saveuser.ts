@@ -2,7 +2,7 @@
 
 import { client } from "@/sanity/lib/client";
 
-export async function AddUserToNewsLetter(prevState: any, formdata: FormData) {
+export async function AddUserToNewsLetter(state: {status:string}, formdata: FormData) {
   console.log(formdata.get("name"));
   const new_user = {
     _type: "users",

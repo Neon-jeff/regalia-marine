@@ -10,8 +10,7 @@ import { Loader2 } from "lucide-react";
 
 const Newsletter = () => {
   const [state, formAction, isPending] = useActionState(AddUserToNewsLetter, {
-    name: "",
-    email: "",
+    status:""
   });
   const { toast } = useToast();
 
