@@ -12,6 +12,7 @@ import {structureTool} from 'sanity/structure'
 import {apiVersion, dataset, projectId} from './sanity/env'
 import {schema} from './sanity/schemaTypes'
 import {structure} from './sanity/structure'
+import {extendPublishAction} from '@/sanity/lib/customactions'
 
 export default defineConfig({
   basePath: '/content-studio',
@@ -25,4 +26,12 @@ export default defineConfig({
     // https://www.sanity.io/docs/the-vision-plugin
     visionTool({defaultApiVersion: apiVersion}),
   ],
+  document:{
+    // actions: (prev,context) =>
+    //   prev.map((originalAction) =>
+    //     originalAction.action === 'publish' && context.schemaType === "posts"
+    //       ? extendPublishAction(originalAction)
+    //       : originalAction
+    //   ),
+  }
 })

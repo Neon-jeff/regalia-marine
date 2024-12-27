@@ -5,6 +5,5 @@ import { client } from '@/sanity/lib/client'
 const builder = imageUrlBuilder(client)
 
 export const getImageUrl=(source:any)=>{
-    console.log(builder.image(source).url())
     return builder.image(source)
 }

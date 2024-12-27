@@ -1,7 +1,7 @@
 import { type SchemaTypeDefinition } from 'sanity'
-import { postSchema } from '../schemas'
+import { postSchema, userSchema } from '../schemas'
 
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [postSchema],
+  types: [postSchema,userSchema],
 }

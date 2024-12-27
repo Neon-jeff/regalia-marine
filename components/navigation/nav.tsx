@@ -52,7 +52,7 @@ const Nav = () => {
     >
       <Link href="/" className="absolute max-md:-translate-y-0 -translate-y-1/2 left-10 max-md:static">
         {/* <Image src={logo} alt="regalia marine logo" width={100} height={100}/> */}
-        <LogoWhite/>
+        <LogoWhite color="#000000"/>
       </Link>
       {/* main nav items */}
       <ul className="flex gap-10 max-sm:hidden">
