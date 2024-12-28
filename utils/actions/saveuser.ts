@@ -20,7 +20,7 @@ export async function AddUserToNewsLetter(state: {status:string}, formdata: Form
     email: formdata.get("email"),
   };
   const userFirstname=formdata.get("name")
-  const email = formdata.get("email")
+  const email = formdata.get("email")?.toString()
 
   try {
     client.create(new_user)
