@@ -51,11 +51,11 @@ const Footer = () => {
         <LogoWhite/>
           <p className="lg:text-base text-sm  font-medium"> Regalia Marine</p>
         </div>
-        <p>
+        {/* <p>
           brief company description <br /> Lorem ipsum dolor sit amet
           consectetur, adipisicing elit. Harum excepturi, dignissimos pariatur
           consequuntur distinctio ullam error quasi provident maxime debitis?
-        </p>
+        </p> */}
       </div>
       <div className="grid grid-cols-3 max-md:grid-cols-2 lg:w-2/3 lg:gap-x-10 gap-5 gap-y-10 ">
         {/* company */}

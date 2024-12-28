@@ -27,11 +27,11 @@ export default defineConfig({
     visionTool({defaultApiVersion: apiVersion}),
   ],
   document:{
-    // actions: (prev,context) =>
-    //   prev.map((originalAction) =>
-    //     originalAction.action === 'publish' && context.schemaType === "posts"
-    //       ? extendPublishAction(originalAction)
-    //       : originalAction
-    //   ),
+    actions: (prev,context) =>
+      prev.map((originalAction) =>
+        originalAction.action === 'publish' && context.schemaType === "posts"
+          ? extendPublishAction(originalAction)
+          : originalAction
+      ),
   }
 })

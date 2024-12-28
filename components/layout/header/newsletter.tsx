@@ -24,9 +24,15 @@ const Newsletter = () => {
     if (state.status == "error") {
       toast({
         variant: "destructive",
-        description: "You have been successfully addded to our newsletter",
+        description: "Something went wrong",
       });
     }
+    if (state.status == "exists") {
+        toast({
+          variant: "warning",
+          description: "You are already subscribed to our newsletter",
+        });
+      }
   }, [state]);
   return (
     <div className="lg:p-16 p-5 place-items-center rounded-lg space-y-5 bg-white w-11/12  lg:w-2/5 mx-auto my-20">
@@ -63,6 +69,7 @@ const Newsletter = () => {
             name="name"
             className="ring-zinc-200 focus:ring-zinc-500 ring-1 focus:outline-none placeholder:text-sm placeholder:text-zinc-400 p-3 rounded-md"
             placeholder="Mike Conley"
+            required
           />
         </div>
         <div className=" flex flex-col  gap-2   rounded-md   ">
@@ -72,6 +79,7 @@ const Newsletter = () => {
             name="email"
             className="ring-zinc-200 focus:ring-zinc-500 ring-1 focus:outline-none placeholder:text-sm placeholder:text-zinc-400 p-3 rounded-md"
             placeholder="you@email.com"
+            required
           />
         </div>
         <Button className="text-white bg-black rounded-lg" disabled={isPending}>
