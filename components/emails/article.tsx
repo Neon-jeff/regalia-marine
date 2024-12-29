@@ -25,11 +25,13 @@ export const ArticleEmail = ({
   description,
   image,
   slug,
+  author
 }: {
   title: string;
   description: string;
   image: string;
   slug: string;
+  author:string;
 }) => {
   return (
     <Html>
@@ -55,7 +57,7 @@ export const ArticleEmail = ({
                 Article From Regalia Marine
               </Text>
               <Text className="mb-3 text-[17px] text-center  font-normal text-gray-500">
-                Written and published by regalia marine
+                Written by regalia {author}
               </Text>
             </Section>
             <Section className=" pb-5">

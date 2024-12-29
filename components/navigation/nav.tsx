@@ -9,8 +9,7 @@ import {
 } from "motion/react";
 import { X } from "lucide-react";
 import { LogoWhite } from "../logo";
-// import Image from "next/image";
-// import logo from '@/public/images/regalia-logo.svg'
+import { usePathname } from 'next/navigation'
 
 const Nav = () => {
   const nav_items = [
@@ -37,25 +36,20 @@ const Nav = () => {
   ];
   const [open, setOpen] = useState(false);
 
-  // useMotionValueEvent(scrollY, "change", (latest) => {
-  //   if (latest > window.screen.height - 200) {
-  //     setPastHeight(true);
-  //   } else {
-  //     setPastHeight(false);
-  //   }
-  // });
+  const pathname = usePathname()
+
 
   return (
     <nav
-      className="flex justify-center max-md:justify-between absolute py-6 max-sm:py-5 px-10 max-sm:px-5   text-sm  bg-white text-black  font-light w-full   left-1/2 -translate-x-1/2 z-40"
+      className={`flex justify-center max-md:justify-between absolute py-6 max-sm:py-5 px-10 max-sm:px-5   text-sm  bg-black text-white ${pathname=='/'?"bg-opacity-60":"bg-opacity-100"} font-light w-full   left-1/2 -translate-x-1/2 z-40`}
  
     >
       <Link href="/" className="absolute max-md:-translate-y-0 -translate-y-1/2 left-10 max-md:static">
         {/* <Image src={logo} alt="regalia marine logo" width={100} height={100}/> */}
-        <LogoWhite color="#000000"/>
+        <LogoWhite color="#ffffff"/>
       </Link>
       {/* main nav items */}
-      <ul className="flex gap-10 max-sm:hidden">
+      <ul className="flex gap-10 max-md:hidden">
       {nav_items.map((item, index) => (
               <li
                 key={index}

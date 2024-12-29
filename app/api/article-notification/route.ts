@@ -11,11 +11,11 @@ import { client } from "@/sanity/lib/client";
 export async function POST(request: NextRequest) {
     const emails = await client.fetch(`*[_type == 'users'].email`)
     const body = await request.json()
-    const {title,description,image,slug}=body
-    const emailHtml = await render(ArticleEmail({title,description,image,slug}));
+    const {title,description,image,slug,author}=body
+    const emailHtml = await render(ArticleEmail({title,description,image,slug,author}));
     // const reqBody=await request.json()
     const transporter: nodemailer.Transporter = nodemailer.createTransport({
-        host: 'smtp.gmail.com',
+        host: 'smtp.zoho.com',
         port: 465,
         secure: true,
         auth: {
@@ -25,7 +25,7 @@ export async function POST(request: NextRequest) {
       });
     
       const mailOptions: nodemailer.SendMailOptions = {
-        from: 'jeffneon78@gmail.com', // sender address
+        from: `Regalia Marine <${process.env.NEXT_PUBLIC_MAIL_USER}>`, // sender address
         to: emails, // list of receivers
         subject: "New Article From Regalia Marine", // Subject line
         html:emailHtml

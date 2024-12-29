@@ -45,7 +45,7 @@ const Footer = () => {
     },
   ];
   return (
-    <footer className="min-h-[60vh] bg-blue-950 max-md:text-xs max-md:flex-col flex justify-between p-5 lg:gap-20 gap-10 lg:p-20 text-white">
+    <footer className="min-h-[30vh] bg-blue-950 max-md:text-xs max-md:flex-col flex justify-between p-5 lg:gap-20 gap-10 lg:p-20 text-white mt-0">
       <div className="space-y-5 lg:w-1/2 max-md:space-y-2 ">
         <div>
         <LogoWhite/>

@@ -34,7 +34,7 @@ const PostDetails = async({params}:{params:Promise<{slug:string}>}) => {
       }
     }
   return (
-    <div className='pt-36 bg-white min-h-screen  mx-auto lg:px-20 px-4'>
+    <div className='py-36 bg-white min-h-screen  mx-auto lg:px-20 px-4'>
 
       <div className='lg:w-3/5 mx-auto space-y-4'>
       <Link href='/insights' className='text-ultramarine-600 flex items-center gap-2 hover:underline mb-5  text-base' >

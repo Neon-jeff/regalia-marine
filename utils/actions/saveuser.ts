@@ -36,7 +36,7 @@ export async function AddUserToNewsLetter(state: {status:string}, formdata: Form
           });
         
           const mailOptions: nodemailer.SendMailOptions = {
-            from: 'jeffneon78@gmail.com', // sender address
+            from: `Regalia Marine <${process.env.NEXT_PUBLIC_MAIL_USER}>`, // sender address
             to: email, // list of receivers
             subject: "Newsletter Subscription", // Subject line
             html:emailHtml
