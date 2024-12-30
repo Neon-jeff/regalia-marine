@@ -36,7 +36,7 @@ const PostDetails = async({params}:{params:Promise<{slug:string}>}) => {
   return (
     <div className='py-36 bg-white min-h-screen  mx-auto lg:px-20 px-4'>
 
-      <div className='lg:w-3/5 mx-auto space-y-4'>
+      <div className='md:w-3/5 mx-auto space-y-4'>
       <Link href='/insights' className='text-ultramarine-600 flex items-center gap-2 hover:underline mb-5  text-base' >
         <ChevronLeft size={20} />
       Back to Insights
@@ -57,7 +57,7 @@ const PostDetails = async({params}:{params:Promise<{slug:string}>}) => {
       <p className='text-sm  font-medium'>
         "{post.description}"
       </p>
-      <div className='prose mt-10 prose-img:h-[350px] prose-img:w-full prose-img:object-cover prose:img'>
+      <div className='prose mt-10 w-full *:w-full max-w-none prose-img:h-[350px] prose-img:w-full prose-img:object-cover prose:img'>
         <PortableText value={post.body} components={PortableComponents}/>
       </div>
       </div>

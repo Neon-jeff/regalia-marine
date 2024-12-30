@@ -26,7 +26,7 @@ export async function AddUserToNewsLetter(state: {status:string}, formdata: Form
     client.create(new_user)
     const emailHtml = await render(NewsletterEmail({userFirstname}))
     const transporter: nodemailer.Transporter = nodemailer.createTransport({
-            host: 'smtp.gmail.com',
+            host: 'smtp.zoho.com',
             port: 465,
             secure: true,
             auth: {

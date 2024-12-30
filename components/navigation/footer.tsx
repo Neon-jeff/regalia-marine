@@ -30,18 +30,23 @@ const Footer = () => {
     {
       icon: <Linkedin size={20}/>,
       name: "LinkedIn",
+      route:'https://www.linkedin.com/company/regalia-marine/'
+      
     },
     {
       icon: <Twitter size={20}/>,
       name: "Twitter",
+      route:'https://www.x.com/regalia_marine',
     },
     {
       icon: <Instagram size={20}/>,
       name: "Instagram",
+      route:'https://www.instagram.com/regalia_marine'
     },
     {
       icon: <Mail size={20}/>,
       name: "Email Us",
+      route:'mailto:support@regaliamarine.com'
     },
   ];
   return (
@@ -84,7 +89,7 @@ const Footer = () => {
             <ul className="flex flex-col gap-5">
               {socials.map((item, index) => (
                 <li key={index} className="lg:text-sm ">
-                  <Link href="#">
+                  <Link href={item.route} target="_blank">
                     <span className="hover:text-blue-400 transition duration-300 ease-in items-center flex w-fit gap-2 ">
                       {item.icon}
                       {item.name}
