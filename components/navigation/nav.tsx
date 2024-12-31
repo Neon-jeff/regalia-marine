@@ -71,7 +71,7 @@ const Nav = () => {
       <HambergerMenu
         variant="Outline"
         size={30}
-          color="black"
+          color="white"
         className=" right-5 lg:hidden translate-y-2"
         onClick={() => {
           setOpen(true);
