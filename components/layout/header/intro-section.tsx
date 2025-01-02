@@ -18,19 +18,19 @@ const IntroSection = () => {
       image:one
     },
     {
-      title: "Computational Fluid Dynamics (CFD)",
+      title: "Simulations",
       description:
         "Our CFD simulations ensure hydrodynamic efficiency, reducing drag and improving vessel performance.",
       image:two
     },
     {
-      title: "Performance Optimization",
+      title: "Advanced Visualization",
       description:
         "We enhance vessel speed, fuel efficiency, and operational reliability through cutting-edge optimization strategies.",
       image:three
     },
     {
-      title: "Advanced Visualization",
+      title: "Maritime Engineering",
       description:
         "Using 3D rendering and virtual reality, we create detailed product visualizations for better design evaluation and collaboration.",
       image:four
@@ -58,7 +58,7 @@ const IntroSection = () => {
         </h1>
         <p className="md:w-4/6 text-base ">
           {
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, cumque sunt quia nam qui cupiditate sapiente alias animi quos, praesentium doloremque dicta assumenda adipisci dignissimos atque corporis sit eligendi! Voluptatum enim nesciunt, officia eveniet animi nobis "
+            "We are a dynamic and innovative company dedicated to providing cutting-edge engineering services. Our expertise spans across modeling, design optimization and visualization, simulations and advanced engineering solutions, tailored to meet the unique needs of every client."
           }
         </p>
       </div>
@@ -69,7 +69,6 @@ const IntroSection = () => {
           <h1 className="text-4xl max-sm:text-2xl text-blue-500 ">
             What we do
           </h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, repellat.</p>
         </div>
       
           <div className="grid grid-cols-2 max-md:grid-cols-1  gap-8 ">
