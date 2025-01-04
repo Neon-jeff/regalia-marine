@@ -1,13 +1,13 @@
 "use client";
 
-
 import React from "react";
 import { Button } from "@/components/ui/button";
-import one from '@/public/images/do1.jpg'
-import two from '@/public/images/do2.jpg'
-import three from '@/public/images/do3.jpg'
-import four from '@/public/images/do4.jpg'
+import one from "@/public/images/do1.jpg";
+import two from "@/public/images/do2.jpg";
+import three from "@/public/images/do3.jpg";
+import four from "@/public/images/do4.jpg";
 import Image from "next/image";
+import Link from "next/link";
 
 const IntroSection = () => {
   const services = [
@@ -15,25 +15,25 @@ const IntroSection = () => {
       title: "Engineering and Design Services",
       description:
         "We provide expert engineering and design solutions in naval architecture, shipbuilding, offshore platforms, and structural analysis, using advanced tools like 3D modeling, virtual prototyping, and digital twin technology.",
-      image:one
+      image: one,
     },
     {
       title: "Simulations",
       description:
         "Our CFD simulations ensure hydrodynamic efficiency, reducing drag and improving vessel performance.",
-      image:two
+      image: two,
     },
     {
       title: "Advanced Visualization",
       description:
         "We enhance vessel speed, fuel efficiency, and operational reliability through cutting-edge optimization strategies.",
-      image:three
+      image: three,
     },
     {
       title: "Maritime Engineering",
       description:
         "Using 3D rendering and virtual reality, we create detailed product visualizations for better design evaluation and collaboration.",
-      image:four
+      image: four,
     },
   ];
 
@@ -53,9 +53,7 @@ const IntroSection = () => {
 
       {/* about */}
       <div className="flex items-center text-center justify-between flex-col max-sm:gap-5 space-y-5 ">
-        <h1 className="text-4xl max-sm:text-2xl text-blue-500">
-          Who We Are
-        </h1>
+        <h1 className="text-4xl max-sm:text-2xl text-blue-500">Who We Are</h1>
         <p className="md:w-4/6 text-base ">
           {
             "We are a dynamic and innovative company dedicated to providing cutting-edge engineering services. Our expertise spans across modeling, design optimization and visualization, simulations and advanced engineering solutions, tailored to meet the unique needs of every client."
@@ -70,24 +68,29 @@ const IntroSection = () => {
             What we do
           </h1>
         </div>
-      
-          <div className="grid grid-cols-2 max-md:grid-cols-1  gap-8 ">
-            {services.map((item, index) => (
-                <div
-                  key={index}
-                  className={`space-y-2  bg-white h-full p-5 rounded-lg text-start hover:scale-105 transition ease-in duration-200   `}
-                >
-                  {/* <span className="h-12 w-12 text-ultramarine-500  flex items-center justify-center border border-ultramarine-400 rounded-full">
+
+        <div className="grid grid-cols-2 max-md:grid-cols-1  gap-8 ">
+          {services.map((item, index) => (
+            <div
+              key={index}
+              className={`space-y-2  bg-white h-full p-5 rounded-lg text-start hover:scale-105 transition ease-in duration-200   `}
+            >
+              {/* <span className="h-12 w-12 text-ultramarine-500  flex items-center justify-center border border-ultramarine-400 rounded-full">
                     {index + 1}
                   </span> */}
-                  <Image src={item.image} alt='Regalia service image description image' className='rounded-md h-[250px] object-cover w-full'/>
-                  <p className="text-lg font-normal text-black">{item.title}</p>
-                  <p className="text-sm ">{item.description}</p>
-                </div>
-           
-            ))}
-          </div>
+              <Image
+                src={item.image}
+                alt="Regalia service image description image"
+                className="rounded-md h-[250px] object-cover w-full"
+              />
+              <p className="text-lg font-normal text-black">{item.title}</p>
+              {/* <p className="text-sm ">{item.description}</p> */}
+            </div>
+          ))}
+        </div>
+        <Link href={"mailto:support@regaliamarine.com"}>
           <Button className="w-fit">Request Quotation</Button>
+        </Link>
       </div>
     </div>
   );

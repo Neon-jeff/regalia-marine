@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { Button } from "../ui/button";
-import training from "@/public/images/training.jpg";
+import training from "@/public/images/details.jpg";
 import Link from "next/link";
 import { MoveRight } from "lucide-react";
 
@@ -20,12 +20,11 @@ const Trainings = () => {
               Regalia X Tangier Workshop
             </h1>
             <p>
-              Gain on demand skills in fundalmental and emerging technologies in
-              marine engineering
+            Gain practical experience in problem solving in mathematical modelling, engineering, robotics, physics, and financial modeling.
             </p>
-            <Link href={"/training/regalia-x-tangier-workshop"} className="block text-ultramarine-700 underline ">
+            {/* <Link href={"/training/regalia-x-tangier-workshop"} className="block text-ultramarine-700 underline ">
               Learn More
-            </Link>
+            </Link> */}
 
             <div className="flex flex-col gap-0.5">
               <span className="font-medium">Application Closes:</span>
@@ -34,7 +33,7 @@ const Trainings = () => {
 
             <Link
               href={
-                "https://docs.google.com/forms/d/e/1FAIpQLSe1CW2-pp8UTnDaVPBC6Q-_gPE4RcPGWhBMHlrRR4GOB-_fqw/viewform?usp=dialog"
+                "/training/regalia-x-tangier-workshop"
               }
               target="_blank"
               className="block w-full"

@@ -6,8 +6,8 @@ import image2 from "@/public/images/maple2.jpg";
 import image3 from "@/public/images/maple3.jpg";
 import image4 from "@/public/images/tam.jpg";
 import Image from "next/image";
-import { LogoWhite } from "@/components/logo";
 import Link from "next/link";
+import hero from "@/public/images/details.jpg";
 
 const RegaliaAndTangierWorkshop = () => {
   const maple_courses = [
@@ -51,7 +51,7 @@ const RegaliaAndTangierWorkshop = () => {
   ];
   return (
     <div className="pt-36 pb-48  space-y-20 h-full  bg-white text-slate-700 text-base">
-      <div className="lg:px-20 px-3 gap-10 max-md:flex-col flex">
+      <div className="lg:px-20 px-3 gap-10 max-md:flex-col flex items-center">
         <div className="space-y-5  lg:w-1/2 ">
           <p className="  w-fit text-blue-800 rounded-full ">
             Regalia Marine in collaboration <br className="lg:hidden" /> with
@@ -61,8 +61,10 @@ const RegaliaAndTangierWorkshop = () => {
             Regalia and <br /> Tangier Workshop
           </h1>
           <p>
-            This workshops is covers essentials topics that addresses real-world
-            challenges using Marine robotics and Maple Soft technologies
+            This workshop will explore how Maplesoft empowers engineers,
+            scientists as well as financial analysts to tackle real life
+            challenges in robotics, mathematics, physics, engineering, sciences,
+            and even financial modeling.
           </p>
           <Link
             className="block"
@@ -76,6 +78,12 @@ const RegaliaAndTangierWorkshop = () => {
             </Button>
           </Link>
         </div>
+
+        <Image
+          src={hero}
+          alt="Regalia X Tangier Workshop"
+          className="lg:w-1/2 w-full h-[60vh] object-cover rounded-xl"
+        />
       </div>
 
       <div className=" flex max-md:grid max-md:grid-cols-2 justify-center bg-gray-100 gap-5 lg:gap-20  rounded-lg  lg:p-10 p-5 text-black ">
@@ -91,7 +99,7 @@ const RegaliaAndTangierWorkshop = () => {
         </div>
         <div className="flex flex-col gap-1">
           <p className="lg:text-lg text-base font-medium ">Time</p>
-          <p>8:30am - 4pm Daily</p>
+          <p>8:30am - 4:00pm Daily</p>
         </div>
         <div className="flex flex-col gap-1">
           <p className="lg:text-lg text-base font-medium ">Location</p>
@@ -130,7 +138,7 @@ const RegaliaAndTangierWorkshop = () => {
         </h1>
         <p>This programme is open to :</p>
         <ul className=" text-black    space-y-5   text-base lg:w-4/5 rounded-md ">
-          <li>1. Science, Engineering and finance Students</li>
+          <li>1. Science, engineering and finance students</li>
           <li>2. Graduates and post graduates</li>
           <li>3. Professionals and researcher.</li>
         </ul>
