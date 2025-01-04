@@ -1,51 +1,60 @@
-import Image from 'next/image'
-import React from 'react'
-import { Button } from '../ui/button'
+import Image from "next/image";
+import React from "react";
+import { Button } from "../ui/button";
+import training from "@/public/images/training.jpg";
+import Link from "next/link";
+import { MoveRight } from "lucide-react";
 
 const Trainings = () => {
   return (
-    <div className='p-10 space-y-10 max-sm:px-5 font-light' >
-      <h1 className='text-3xl font-normal text-ultramarine-600'>Training Schedules</h1>
+    <div className="p-10 space-y-10 max-sm:px-5  font-light " id="trainings">
+      <h1 className="text-3xl font-normal  p-5   mx-auto text-black w-fit text-center">
+        Training Programmes <br /> to accelerate your career
+      </h1>
 
       {/* training cards */}
-<div className='grid xl:grid-cols-2 gap-10 w-full'>
-<div className='bg-white flex flex-col-reverse   rounded-xl '>
-        <div className='space-y-4 p-5'>
-        <h1 className='text-xl text-slate-500 font-medium  '>
-            Regalia Marine <br /> Internship ( 1.0 )
-        </h1>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam fugiat praesentium ipsam porro ratione tenetur inventore iste, ex accusamus earum similique sequi velit optio suscipit ipsum rerum adipisci odio voluptatem.</p>
+      <div className="grid xl:grid-cols-3 gap-10 w-full">
+        <div className="bg-white flex flex-col-reverse   rounded-xl ">
+          <div className="space-y-2 p-5">
+            <h1 className="text-xl text-slate-900 font-medium  ">
+              Regalia X Tangier Workshop
+            </h1>
+            <p>
+              Gain on demand skills in fundalmental and emerging technologies in
+              marine engineering
+            </p>
+            <Link href={"/training/regalia-x-tangier-workshop"} className="block text-ultramarine-700 underline ">
+              Learn More
+            </Link>
 
-        <div className='flex flex-col gap-0.5'>
-            <span className='font-medium'>Application Closes:</span>
-            <span>January 25, 2025</span>
-        </div>
+            <div className="flex flex-col gap-0.5">
+              <span className="font-medium">Application Closes:</span>
+              <span>January 30, 2025</span>
+            </div>
 
-        <Button variant={'default'} >Register Now</Button>
+            <Link
+              href={
+                "https://docs.google.com/forms/d/e/1FAIpQLSe1CW2-pp8UTnDaVPBC6Q-_gPE4RcPGWhBMHlrRR4GOB-_fqw/viewform?usp=dialog"
+              }
+              target="_blank"
+              className="block w-full"
+            >
+              <Button className="">
+                Register Now <MoveRight />
+              </Button>
+            </Link>
+          </div>
+          <Image
+            src={training}
+            alt="training image banner cohort one"
+            width={500}
+            height={500}
+            className="w-full object-cover h-56 rounded-lg"
+          />
         </div>
-        <Image src={'https://images.pexels.com/photos/13170673/pexels-photo-13170673.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'} alt='training image banner cohort one' width={500} height={500} className='w-full object-cover h-72'/>
       </div>
-
-      <div className='bg-white flex flex-col-reverse   rounded-xl '>
-        <div className='space-y-4 p-5'>
-        <h1 className='text-xl text-slate-500 font-medium  '>
-            Computer Aided Design <br /> Master Class ( 1.0 )
-        </h1>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam fugiat praesentium ipsam porro ratione tenetur inventore iste, ex accusamus earum similique sequi velit optio suscipit ipsum rerum adipisci odio voluptatem.</p>
-
-        <div className='flex flex-col gap-0.5'>
-            <span className='font-medium'>Application Closes:</span>
-            <span>January 25, 2025</span>
-        </div>
-        <Button variant={'default'} >Register Now</Button>
-        </div>
-        <Image src={'https://images.pexels.com/photos/3912948/pexels-photo-3912948.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'} alt='training image banner cohort one' width={500} height={500} className='w-full object-cover h-72'/>
-      </div>
-</div>
-      
-      
     </div>
-  )
-}
+  );
+};
 
-export default Trainings
+export default Trainings;

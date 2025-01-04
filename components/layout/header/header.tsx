@@ -204,7 +204,7 @@ gsap.registerPlugin(scrollTrigger)
       </div> */}
  
     </div>
-  );
+  )
 };
 
 export default Header;

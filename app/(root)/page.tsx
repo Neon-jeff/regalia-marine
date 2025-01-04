@@ -10,7 +10,7 @@ export default function Home() {
   
     <Header/>
     <IntroSection/>
-    <Student/>
+    {/* <Student/> */}
     <Newsletter/>
     {/* <Seminar/> */}
   </div>;
