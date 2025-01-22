@@ -69,12 +69,13 @@ const RegaliaAndTangierWorkshop = () => {
           <Link
             className="block"
             href={
-              "https://docs.google.com/forms/d/e/1FAIpQLSe1CW2-pp8UTnDaVPBC6Q-_gPE4RcPGWhBMHlrRR4GOB-_fqw/viewform?usp=dialog"
+              "https://f005.backblazeb2.com/file/stemstorage/Regalia_X_Tangier_Overview.pdf"
             }
             target="_blank"
+           
           >
             <Button className="w-fit">
-              Register Now <MoveRight />
+              Workshop Overview <MoveRight />
             </Button>
           </Link>
         </div>
@@ -115,9 +116,7 @@ const RegaliaAndTangierWorkshop = () => {
           We will cover the following topics in marine robotics and Maple Soft
           technologies
         </p> */}
-        <Button className="w-fit mt-5 p-3 bg-white border border-ultramarine-700 text-ultramarine-700">
-          Download Curriculum
-        </Button>
+
         <ul className=" text-black  lg:w-11/12  py-5 grid lg:grid-cols-3 grid-cols-1  gap-8  rounded-md ">
           {maple_courses.map((item, index) => (
             <li
