@@ -20,7 +20,7 @@ const Insights = async () => {
     <div className='pb-36 bg-white   place-items-center  mx-auto '>
       <InsightHeader/>
       {/* blog layout */}
-      <div className='flex lg:px-10 px-4   relative max-md:flex-col'>
+      <div className='flex lg:px-10 px-4 min-h-screen w-full  relative max-md:flex-col'>
       <Filter/>
       <div className='w-4/5 max-md:w-full'>
       {/* <LatestNews/> */}
