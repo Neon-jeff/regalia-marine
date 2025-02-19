@@ -7,7 +7,8 @@ import {getImageUrl} from '@/utils/sanityImageUrl'
 export const revalidate = 0;
 
 const fetchPost=async():Promise<Array<PostType>>=>{
-  const query="*[_type == 'posts']{title,description,_createdAt,body,'slug':slug.current,coverimage}"
+  const query =
+    "*[_type == 'posts']{title,description,_createdAt,body,'slug':slug.current,coverimage,'category':category->.name}";
   const data=await client.fetch(query)
   return data
 }
@@ -22,7 +23,7 @@ const Insights = async () => {
       <div className='flex lg:px-10 px-4   relative max-md:flex-col'>
       <Filter/>
       <div className='w-4/5 max-md:w-full'>
-      <LatestNews/>
+      {/* <LatestNews/> */}
       {/* all news layout here */}
 
       <div className='lg:px-20 lg:mt-10'>

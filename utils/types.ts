@@ -7,3 +7,7 @@ export type PostType={
     coverimage:any;
     author:string
 }
+
+export type CategoryType={
+    name:string
+}

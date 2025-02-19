@@ -60,5 +60,12 @@ export const post = {
         },
       ],
     },
+    {
+      name: "category",
+      title: "Category",
+      type: "reference",
+      validation:(rule:Rule)=>rule.required().error("This field is required"),
+      to: [{type:'category'}],
+    },
   ],
 };
