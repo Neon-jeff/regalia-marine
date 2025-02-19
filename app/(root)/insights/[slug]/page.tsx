@@ -93,7 +93,9 @@ const PostDetails = async ({
       ),
     },
   };
-  const linkedInRoute = `https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://www.regaliamarine.com/insights/${post.slug}=s&text=${post.description}`;
+  const linkedInRoute = `https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://www.regaliamarine.com/insights/${post.slug}&text=${post.description}`;
+
+  const xLink = `https://x.com/intent/post?text=${post.description}&url=https://www.regaliamarine.com/insights/${post.slug}`
   return (
     <div className="py-36 bg-white relative min-h-screen  mx-auto lg:px-20 px-4">
       {/* share buttons */}
@@ -101,13 +103,13 @@ const PostDetails = async ({
         <LinkButton route={linkedInRoute}>
           <IconBrandLinkedin />
         </LinkButton>
-        <LinkButton route={``}>
+        <LinkButton route={xLink}>
           <IconBrandX />
         </LinkButton>
-        <LinkButton route={``}>
+        <LinkButton route={`whatsapp://send?text=Read this post from regalia marine https://www.regaliamarine.com/insights/${post.slug}`}>
           <IconBrandWhatsapp />
         </LinkButton>
-        <LinkButton route={``}>
+        <LinkButton route={`https://www.facebook.com/sharer/sharer.php?u=https://www.regaliamarine.com/insights/${post.slug}&?t=${post.description}`}>
           <IconBrandFacebook />
         </LinkButton>
         <LinkButton route={``}>
