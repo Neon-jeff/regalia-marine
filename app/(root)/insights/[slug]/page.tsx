@@ -20,25 +20,37 @@ import {
   IconBrandFacebook,
   IconBrandInstagram,
 } from "@tabler/icons-react";
+import type { Metadata, ResolvingMetadata } from "next";
 
-const fetchPost = async (slug: string): Promise<PostType> => {
-  const query = `*[_type == 'posts' && slug.current == '${slug}']{title,description,_createdAt,body,'slug':slug.current,coverimage,author,'category':category->.name}`;
-  const data = await client.fetch(query);
-  return data[0];
-};
-
-export async function generateMetadata({ params, searchParams }, parent) {
-  const { slug } = params;
+export async function generateMetadata(
+  { params }: { params: Promise<{ slug: string }> },
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const { slug } = await params;
   const post = await fetchPost(slug);
   const opengraphImage = getImageUrl(post.coverimage).url();
   return {
     title: post.title,
     description: post.description.split(" ").slice(0, 12).join(" "),
     openGraph: {
-      images: opengraphImage,
+      title:post.title,
+      description:post.description.split(" ").slice(0, 12).join(" "),
+      images: [
+        {
+          url: opengraphImage,
+          height: 200,
+          width: 200,
+        },
+      ],
     },
   };
 }
+
+const fetchPost = async (slug: string): Promise<PostType> => {
+  const query = `*[_type == 'posts' && slug.current == '${slug}']{title,description,_createdAt,body,'slug':slug.current,coverimage,author,'category':category->.name}`;
+  const data = await client.fetch(query);
+  return data[0];
+};
 
 const LinkButton = ({
   route,
@@ -47,7 +59,11 @@ const LinkButton = ({
   route: string;
   children: React.ReactNode;
 }) => {
-  return <Link href={route} target='_blank'>{children}</Link>;
+  return (
+    <Link href={route} target="_blank">
+      {children}
+    </Link>
+  );
 };
 
 const PostDetails = async ({
