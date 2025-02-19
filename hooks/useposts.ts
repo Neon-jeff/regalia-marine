@@ -1,3 +1,1 @@
-const usePosts = async ()=>{
-    const {data} =''
-}
+// for client side data fetching
