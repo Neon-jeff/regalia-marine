@@ -6,9 +6,13 @@ import {
 } from "@/components/ui/popover";
 import { SlidersHorizontal, Search } from "lucide-react";
 import { client } from "@/sanity/lib/client";
-import { CategoryType } from "@utils/types";
 import Link from "next/link";
 
+
+interface CategoryType{
+  name: string;
+  slug: string;
+}
 const fetchCategory = async (): Promise<Array<CategoryType>> => {
   const query = "*[_type == 'category']{name,'slug':slug.current}";
   const data = await client.fetch(query);
