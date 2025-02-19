@@ -18,7 +18,11 @@ const fetchPost = async (category: string): Promise<Array<PostType>> => {
   return data;
 };
 
-const Insights = async ({ params }: { params: Promise<{ slug: string }> }) => {
+const InsightsCategory = async ({
+  params,
+}: {
+  params: Promise<{ category: string }>;
+}) => {
   const { category } = await params;
   console.log(category);
   const posts = await fetchPost(category);
@@ -60,4 +64,4 @@ const Insights = async ({ params }: { params: Promise<{ slug: string }> }) => {
   );
 };
 
-export default Insights;
+export default InsightsCategory;
