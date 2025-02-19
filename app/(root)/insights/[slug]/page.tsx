@@ -33,8 +33,8 @@ export async function generateMetadata(
     title: post.title,
     description: post.description.split(" ").slice(0, 12).join(" "),
     openGraph: {
-      title:post.title,
-      description:post.description.split(" ").slice(0, 12).join(" "),
+      title: post.title,
+      description: post.description.split(" ").slice(0, 12).join(" "),
       images: [
         {
           url: opengraphImage,
@@ -93,7 +93,7 @@ const PostDetails = async ({
       ),
     },
   };
-  const linkedInRoute = `https://www.linkedin.com/feed/?shareActive=true&shareUrl=http://localhost:3000/insights/${post.slug}=s&text=${post.description}`;
+  const linkedInRoute = `https://www.linkedin.com/feed/?shareActive=true&shareUrl=https://www.regaliamarine.com/insights/${post.slug}=s&text=${post.description}`;
   return (
     <div className="py-36 bg-white relative min-h-screen  mx-auto lg:px-20 px-4">
       {/* share buttons */}
