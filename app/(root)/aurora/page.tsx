@@ -1,3 +1,4 @@
+'use client';
 import { AuroraLogo } from "@/components/logo";
 import PartnerAurora from "@/components/logo/partners";
 import Paystack from "@/components/logo/paystack";
