@@ -16,6 +16,12 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
+const michroma = localFont({
+  src: "../fonts/Michroma-Regular.ttf",
+  variable: "--font-michroma",
+  weight: "400",
+});
+
 export const metadata: Metadata = {
   title: "Regalia Marine",
   description: "Africas's finest marine ",
@@ -30,7 +36,7 @@ export default function RootLayout({
     <html lang="en">
       
       <body
-        className={`${geistSans.variable} ${geistMono.variable} bg-gray-50 antialiased text-sm max-sm:text-sm font-[family-name:var(--font-geist-sans)] font-light text-slate-500`}
+        className={`${geistSans.variable} ${michroma.variable} ${geistMono.variable} bg-gray-50 antialiased text-sm max-sm:text-sm font-[family-name:var(--font-geist-sans)] font-light text-slate-500`}
       >
         <Nav/>
         <ReactQueryProvider>

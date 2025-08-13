@@ -24,6 +24,9 @@ export default {
   				'900': '#040395',
   				'950': '#000577'
   			},
+			aurora:{
+				main:'#C6FF00'
+			},
   			foreground: 'hsl(var(--foreground))',
   			card: {
   				DEFAULT: 'hsl(var(--card))',

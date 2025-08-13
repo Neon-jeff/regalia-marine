@@ -1,7 +1,9 @@
+'use client'
 import React from "react";
 import Link from "next/link";
 import { LogoWhite } from "../logo";
 import { Linkedin, Twitter, Instagram, Mail } from "lucide-react";
+import { usePathname } from "next/navigation";
 const Footer = () => {
   const nav_items = [
     {
@@ -49,6 +51,10 @@ const Footer = () => {
       route:'mailto:support@regaliamarine.com'
     },
   ];
+  const pathname = usePathname();
+  if (pathname.includes('aurora')){
+    return null
+  }
   return (
     <footer className="min-h-[30vh] bg-blue-950 max-md:text-xs max-md:flex-col flex justify-between p-5 lg:gap-20 gap-10 lg:p-20 text-white mt-0">
       <div className="space-y-5 lg:w-1/2 max-md:space-y-2 ">

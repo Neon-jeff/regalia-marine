@@ -37,7 +37,9 @@ const Nav = () => {
   const [open, setOpen] = useState(false);
 
   const pathname = usePathname()
-
+  if (pathname.includes('aurora')){
+    return null
+  }
 
   return (
     <nav
