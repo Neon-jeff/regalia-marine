@@ -1,11 +1,14 @@
-'use client'
-import { AuroraRegistrationForm } from "@/components/forms";
 import { AuroraLogo } from "@/components/logo";
 import PartnerAurora from "@/components/logo/partners";
 import Paystack from "@/components/logo/paystack";
 import { IconArrowRight, IconArrowUpRight } from "@tabler/icons-react";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import React from "react";
+
+const DynamicForm = dynamic(() => import("@/components/forms/aurora"), {
+  ssr: false,
+});
 
 const AuroraTrainingPage = () => {
   return (
@@ -16,7 +19,7 @@ const AuroraTrainingPage = () => {
         <Link href={'https://bakel-bakel.github.io/robotics-core-workshop-oct2025/'} className="bg-aurora-main px-6 py-4 flex items-center justify-center gap-2 rounded-full text-black">View Curriculum <IconArrowUpRight/></Link>
          <Link href = {'https://www.upwork.com/freelancers/bakel'} className="bg-transparent border px-6 py-4 border-white flex items-center justify-center gap-2 rounded-full">Meet the tutor <IconArrowRight/></Link>
       </div>
-      <AuroraRegistrationForm/>
+      <DynamicForm/>
       <div className="flex mx-auto gap-5 justify-center mt-10">
         <PartnerAurora/>
         <Paystack/>
