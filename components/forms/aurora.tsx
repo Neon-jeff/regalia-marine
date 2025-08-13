@@ -44,7 +44,7 @@ const AuroraRegistrationForm = () => {
     reference: new Date().getTime().toString(),
     email: form.watch("email"),
     amount: 50000 * 100,
-    publicKey: process.env.NEXT_PUBLIC_PAYSTACK_KEY || '',
+    publicKey: process.env.NEXT_PUBLIC_PAYSTACK_KEY || "",
   };
   const makePayment = usePaystackPayment(payStackConfig);
   function handlePaymentSuccess(data: AuroraFormSchema, ref: PaystackRef) {
@@ -56,8 +56,12 @@ const AuroraRegistrationForm = () => {
       return;
     }
     setIsOpen(true);
-    uploadMutation.mutate(
-      { ...data, paymentRef: ref.reference }
+    uploadMutation.mutate({ ...data, paymentRef: ref.reference },
+      {
+        onSuccess: () => {
+          form.reset();
+        }
+      }
     );
   }
   function handleSubmit(data: AuroraFormSchema) {
@@ -171,9 +175,10 @@ const AuroraRegistrationForm = () => {
         render={({ field }) => (
           <FormInput
             {...field}
-            label="Social Media"
+            label="Social Media Link"
             placeholder="Enter your social media handle"
             message={form.formState.errors.social_media?.message}
+            type="url"
           />
         )}
       />
@@ -191,9 +196,7 @@ const AuroraRegistrationForm = () => {
         </Button>
       </div>
       <AlertDialog open={open} onOpenChange={setIsOpen}>
-        <AlertDialogTitle>
-         {}
-        </AlertDialogTitle>
+        <AlertDialogTitle>{}</AlertDialogTitle>
         <AlertDialogContent className="bg-white rounded-xl flex flex-col items-center justify-center p-5 min-h-56">
           {uploadMutation.isPending && (
             <div className="flex flex-col items-center">

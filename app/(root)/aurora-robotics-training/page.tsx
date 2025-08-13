@@ -17,8 +17,8 @@ const AuroraTrainingPage = () => {
       <AuroraNav />
       <AuroraHero/>
       <div className="flex max-md:flex-col max-md:w-full w-fit mx-auto gap-5">
-        <Link href={'https://bakel-bakel.github.io/robotics-core-workshop-oct2025/'} className="bg-aurora-main px-6 py-4 flex items-center justify-center gap-2 rounded-full text-black">View Curriculum <IconArrowUpRight/></Link>
-         <Link href = {'https://www.upwork.com/freelancers/bakel'} className="bg-transparent border px-6 py-4 border-white flex items-center justify-center gap-2 rounded-full">Meet the tutor <IconArrowRight/></Link>
+        <Link target="_blank" href={'https://bakel-bakel.github.io/robotics-core-workshop-oct2025/'} className="bg-aurora-main px-6 py-4 flex items-center justify-center gap-2 rounded-full text-black">View Curriculum <IconArrowUpRight/></Link>
+         <Link target="_blank" href = {'https://www.upwork.com/freelancers/bakel'} className="bg-transparent border px-6 py-4 border-white flex items-center justify-center gap-2 rounded-full">Meet the tutor <IconArrowRight/></Link>
       </div>
       <DynamicForm/>
       <div className="flex mx-auto gap-5 justify-center mt-10">

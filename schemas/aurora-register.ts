@@ -17,8 +17,12 @@ export const auroraFormSchema = z.object({
   role: z.string().min(4,{
     message: "Role must be at least 4 characters long"
   }).max(50).trim(),
-  social_media: z.string().min(4,{
-    message: "Social media must be at least 4 characters long"
+  social_media: z.url(
+    {
+      message: "Social media must be a valid Link"
+    }
+  ).min(4,{
+    message: "Social media must be a valid Link"
   }).max(50).trim()
 });
 

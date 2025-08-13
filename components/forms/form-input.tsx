@@ -1,5 +1,5 @@
 "use client";
-import { IconMail, IconPencil } from "@tabler/icons-react";
+import {IconLink, IconMail, IconPencil } from "@tabler/icons-react";
 import React from "react";
 
 interface FormInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -28,13 +28,20 @@ const FormInput = ({
       <label className="peer-focus:translate-x-3 text-white font-semibold block peer-focus:-translate-y-3 bg-black order-3 peer-focus:px-4 w-fit transition-all duration-200 ease-in-out">
         {label}
       </label>
-      <div className="absolute right-3 top-1/2 ">
+      <div className="absolute right-3 top-10 ">
         {type == "text" && (
           <IconPencil className="text-gray-300" strokeWidth={1.2} />
         )}
            {type == "email" && (
           <IconMail className="text-gray-300" strokeWidth={1.2} />
         )}
+        {
+          type ==='url' && (
+            <div className="flex items-center gap-1">
+              <IconLink className="text-gray-300" strokeWidth={1.2} />
+            </div>
+          )
+        }
       </div>
       {message && <p className="text-gray-500 order-1 p-2 text-xs">{message}</p>}
     </div>
