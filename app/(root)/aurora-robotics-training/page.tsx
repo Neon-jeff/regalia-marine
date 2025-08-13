@@ -2,7 +2,7 @@
 import { AuroraLogo } from "@/components/logo";
 import PartnerAurora from "@/components/logo/partners";
 import Paystack from "@/components/logo/paystack";
-import { IconArrowRight, IconArrowUpRight } from "@tabler/icons-react";
+import { IconArrowRight, IconArrowUpRight, IconCalendar, IconClock } from "@tabler/icons-react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import React from "react";
@@ -20,7 +20,14 @@ const AuroraTrainingPage = () => {
         <Link target="_blank" href={'https://bakel-bakel.github.io/robotics-core-workshop-oct2025/'} className="bg-aurora-main px-6 py-4 flex items-center justify-center gap-2 rounded-full text-black">View Curriculum <IconArrowUpRight/></Link>
          <Link target="_blank" href = {'https://www.upwork.com/freelancers/bakel'} className="bg-transparent border px-6 py-4 border-white flex items-center justify-center gap-2 rounded-full">Meet the tutor <IconArrowRight/></Link>
       </div>
-      <DynamicForm/>
+      <div className="mx-auto text-center text-gray-200 bg-aurora-main/10 border border-aurora-main/20 w-fit p-5 rounded-xl space-y-2">
+        <p className="text-lg text-aurora-main flex items-center gap-2 font-medium"><IconCalendar/> Start Date</p>
+        <p>Training kicks off by September 10th, 2025.</p>
+      </div>
+      <div>
+        <h1 className="text-2xl font-bold text-center lg:py-5 pb-5 font-[family-name:var(--font-michroma)]">Register Now</h1>
+         <DynamicForm/>
+      </div>
       <div className="flex mx-auto gap-5 justify-center mt-10">
         <PartnerAurora/>
         <Paystack/>
