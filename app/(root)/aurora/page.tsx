@@ -1,8 +1,8 @@
+'use client'
 import { AuroraRegistrationForm } from "@/components/forms";
 import { AuroraLogo } from "@/components/logo";
 import PartnerAurora from "@/components/logo/partners";
 import Paystack from "@/components/logo/paystack";
-import { Button } from "@/components/ui/button";
 import { IconArrowRight, IconArrowUpRight } from "@tabler/icons-react";
 import Link from "next/link";
 import React from "react";
