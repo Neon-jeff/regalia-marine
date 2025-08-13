@@ -57,12 +57,7 @@ const AuroraRegistrationForm = () => {
     }
     setIsOpen(true);
     uploadMutation.mutate(
-      { ...data, paymentRef: ref.reference },
-      {
-        onSuccess: (data) => {
-          console.log("Data uploaded to Notion:", data);
-        },
-      }
+      { ...data, paymentRef: ref.reference }
     );
   }
   function handleSubmit(data: AuroraFormSchema) {

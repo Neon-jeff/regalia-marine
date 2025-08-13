@@ -9,7 +9,7 @@ import React from "react";
 
 const AuroraTrainingPage = () => {
   return (
-    <div className="min-h-screen max-md:px-3 pb-20 text-gray-400 bg-black pt-5 space-y-10">
+    <main className="min-h-screen max-md:px-3 pb-20 text-gray-400 bg-black pt-5 space-y-10" suppressHydrationWarning>
       <AuroraNav />
       <AuroraHero/>
       <div className="flex w-fit mx-auto gap-5">
@@ -21,7 +21,7 @@ const AuroraTrainingPage = () => {
         <PartnerAurora/>
         <Paystack/>
       </div>
-    </div>
+    </main>
   );
 };
 
