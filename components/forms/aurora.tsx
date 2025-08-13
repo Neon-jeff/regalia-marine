@@ -192,7 +192,7 @@ const AuroraRegistrationForm = () => {
       </div>
       <AlertDialog open={open} onOpenChange={setIsOpen}>
         <AlertDialogTitle>
-          Confirm Registration
+         {}
         </AlertDialogTitle>
         <AlertDialogContent className="bg-white rounded-xl flex flex-col items-center justify-center p-5 min-h-56">
           {uploadMutation.isPending && (

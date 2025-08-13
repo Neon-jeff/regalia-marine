@@ -16,7 +16,7 @@ const AuroraTrainingPage = () => {
     <main className="min-h-screen max-md:px-3 pb-20 text-gray-400 bg-black pt-5 space-y-10" suppressHydrationWarning>
       <AuroraNav />
       <AuroraHero/>
-      <div className="flex w-fit mx-auto gap-5">
+      <div className="flex max-md:flex-col max-md:w-full w-fit mx-auto gap-5">
         <Link href={'https://bakel-bakel.github.io/robotics-core-workshop-oct2025/'} className="bg-aurora-main px-6 py-4 flex items-center justify-center gap-2 rounded-full text-black">View Curriculum <IconArrowUpRight/></Link>
          <Link href = {'https://www.upwork.com/freelancers/bakel'} className="bg-transparent border px-6 py-4 border-white flex items-center justify-center gap-2 rounded-full">Meet the tutor <IconArrowRight/></Link>
       </div>
