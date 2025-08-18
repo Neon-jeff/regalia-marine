@@ -19,7 +19,8 @@ export const auroraFormSchema = z.object({
   }).max(50).trim(),
   social_media: z.url(
     {
-      message: "Social media must be a valid Link"
+      message: "Social media must be a valid Link",
+      pattern: /^(https?:\/\/)?([\w-]+\.)+[\w-]{2,}(\/[^\s]*)?$/
     }
   ).min(4,{
     message: "Social media must be a valid Link"

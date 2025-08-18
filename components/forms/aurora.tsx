@@ -179,6 +179,7 @@ const AuroraRegistrationForm = () => {
             placeholder="Enter your social media handle"
             message={form.formState.errors.social_media?.message}
             type="url"
+            pattern="^(https?:\/\/)?([\w-]+\.)+[\w-]{2,}(\/[^\s]*)?$"
           />
         )}
       />
